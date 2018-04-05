@@ -1,13 +1,14 @@
 <application>
   <component name="ActionsCollector">
     <counts>
-      <entry action="$Delete" count="4" />
+      <entry action="$Delete" count="6" />
+      <entry action="$Undo" count="1" />
       <entry action="EditorBackSpace" count="13" />
       <entry action="EditorCopy" count="1" />
       <entry action="EditorEnter" count="1" />
       <entry action="EditorPaste" count="1" />
       <entry action="EditorUp" count="1" />
-      <entry action="a3" count="7" />
+      <entry action="a3" count="11" />
     </counts>
   </component>
   <component name="FeatureUsageStatistics" first-run="1522925263645" have-been-shown="false" show-in-other="true" show-in-compilation="true">
@@ -103,12 +104,13 @@
       <entry shortcut="Enter" count="1" />
       <entry shortcut="Meta+C" count="1" />
       <entry shortcut="Meta+V" count="1" />
+      <entry shortcut="Meta+Z" count="1" />
       <entry shortcut="Up" count="1" />
     </counts>
   </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="6" />
+      <entry feature="ideaapp.started" count="10" />
       <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
     </counts>
   </component>

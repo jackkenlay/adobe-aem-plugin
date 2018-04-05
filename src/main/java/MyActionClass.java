@@ -6,17 +6,18 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
 
 public class MyActionClass extends AnAction {
 
     private String currentDir = "";
     private String componentName = "";
     private String componentGroup = "";
+    private boolean createClientLibs;
 
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -24,8 +25,7 @@ public class MyActionClass extends AnAction {
         /*
          * TO DO
          * Set focus of input text field
-         * Component Group Dialog
-         * JSON config in root of project
+         * Configurable settings
          *  - default component group
          *  - if null, then can save new entry
          * Tickbox for client libs
@@ -47,24 +47,22 @@ public class MyActionClass extends AnAction {
 
         JTextField componentNameInput = new JTextField();
         JTextField componentGroupInput = new JTextField();
+        JCheckBox createClientLibsChkBx = new JCheckBox();
+        createClientLibsChkBx.setSelected(true);
+
         Object[] message = {
                 "Component Name:", componentNameInput,
-                "Component Group:", componentGroupInput
+                "Component Group:", componentGroupInput,
+                "Client Libs:",createClientLibsChkBx
         };
 
+        //todo set focus to component name input
         int option = JOptionPane.showConfirmDialog(null, message, "Create", JOptionPane.OK_CANCEL_OPTION);
         if (option == JOptionPane.OK_OPTION) {
-            if (componentNameInput.getText().equals("h") && componentGroupInput.getText().equals("h")) {
-                System.out.println("Login successful");
-            } else {
-                System.out.println("login failed");
-            }
-        } else {
-            System.out.println("Login canceled");
+            componentName = componentNameInput.getText();
+            componentGroup = componentGroupInput.getText();
+            createClientLibs = createClientLibsChkBx.isSelected();
         }
-
-        componentName = componentNameInput.getText();
-        componentGroup = componentGroupInput.getText();
 
         this.currentDir = getCurrentWorkingDirectory(e);
 
@@ -79,7 +77,7 @@ public class MyActionClass extends AnAction {
         createFile(componentName + "/_cq_dialog.xml", content);
 
         // create JS, LESS configs/files
-        String clientLibsCategory = "creditsafe.components.content.cta";
+        String clientLibsCategory = componentGroup;
         createClientLibs(componentName, clientLibsCategory);
 
         // create EditConfig
