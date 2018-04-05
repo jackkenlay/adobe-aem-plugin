@@ -29,7 +29,6 @@ public class MyActionClass extends AnAction {
          *  - default component group
          *  - if null, then can save new entry
          * Tickbox for client libs
-         *  - save entry in JSON for default
          * HTML Id generator
          * Add Id in Less Wrapper
          * Add Default JS Anon selector/onclick.
@@ -115,7 +114,7 @@ public class MyActionClass extends AnAction {
     }
 
     private void createHTML(String componentName) {
-        String htmlText = "<h1>${properties.text || \"Hello\"}</h1>";
+        String htmlText = this.getHTMLText(componentName);
         createFile(componentName + "/"+componentName+".html", htmlText);
     }
 
@@ -131,29 +130,53 @@ public class MyActionClass extends AnAction {
         // create clientLibs File
         createFolder(componentName + "/clientlibs");
 
+        //site client libs
         createFolder(componentName + "/clientlibs/site");
         createFile(componentName + "/clientlibs/site/.content.xml", clientLibsContentXML);
         createFolder(componentName + "/clientlibs/site/js");
         createFolder(componentName + "/clientlibs/site/less");
 
+        String lessSiteFileText = "#base=less \n\n" + componentName + ".less";
+        createFile(componentName + "/clientlibs/site/css.txt", lessSiteFileText);
+        String lessFileContent = getDefaultLessContent(componentName);
+        createFile(componentName + "/clientlibs/site/less/"+componentName+".less", lessFileContent);
+
+        String jsSiteFileText = "#base=js \n\n" + componentName + ".js";
+        createFile(componentName + "/clientlibs/site/js.txt", jsSiteFileText);
+
+        String javaScriptText = this.getDefaultJavaScriptContent();
+        createFile(componentName + "/clientlibs/site/js/"+componentName+".js", javaScriptText);
+
+
+        //editor client libs
         createFolder(componentName + "/clientlibs/editor");
         createFile(componentName + "/clientlibs/editor/.content.xml", clientLibsContentXML);
         createFolder(componentName + "/clientlibs/editor/less");
         createFolder(componentName + "/clientlibs/editor/js");
 
         String lessFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/site/css.txt", lessFileText);
-        createFile(componentName + "/clientlibs/site/less/"+componentName+".less", "");
+        createFile(componentName + "/clientlibs/editor/css.txt", lessFileText);
+        String lessEditorFileContent = getDefaultLessContent(componentName);
+        createFile(componentName + "/clientlibs/editor/less/"+componentName+".less", lessEditorFileContent);
 
         String jsFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/site/js.txt", jsFileText);
+        createFile(componentName + "/clientlibs/editor/js.txt", jsFileText);
 
+        String javaEditorScriptText = this.getDefaultJavaScriptContent();
+        createFile(componentName + "/clientlibs/editor/js/"+componentName+".js", javaEditorScriptText);
 
+    }
 
-        String javaScriptText = "(function(){\n" +
+    private String getDefaultJavaScriptContent(){
+        return "(function(){\n" +
                 "    console.log('Client libs JS Loaded');\n" +
                 "})();";
-        createFile(componentName + "/clientlibs/site/js/"+componentName+".js", javaScriptText);
+    }
+
+    private String getDefaultLessContent(String componentName){
+        return "#content-"+componentName+"{\n" +
+                "    \n" +
+                "}";
     }
 
     private void createFile(String name, String fileContent) {
@@ -182,6 +205,12 @@ public class MyActionClass extends AnAction {
     private void createFolder(String folderName) {
         String path = currentDir + folderName;
         new File(path).mkdirs();
+    }
+
+    private String getHTMLText(String componentName){
+        return "<div id=\"component-"+componentName+"\">\n" +
+               "    ${properties.text || \"Hello\"}\n" +
+               "</div>";
     }
 
     private String getCurrentWorkingDirectory(AnActionEvent e) {

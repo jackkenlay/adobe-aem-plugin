@@ -1,14 +1,15 @@
 <application>
   <component name="ActionsCollector">
     <counts>
-      <entry action="$Delete" count="6" />
+      <entry action="$Delete" count="9" />
       <entry action="$Undo" count="1" />
-      <entry action="EditorBackSpace" count="13" />
+      <entry action="EditorBackSpace" count="19" />
       <entry action="EditorCopy" count="1" />
-      <entry action="EditorEnter" count="1" />
+      <entry action="EditorCut" count="1" />
+      <entry action="EditorEnter" count="3" />
       <entry action="EditorPaste" count="1" />
       <entry action="EditorUp" count="1" />
-      <entry action="a3" count="11" />
+      <entry action="a3" count="15" />
     </counts>
   </component>
   <component name="FeatureUsageStatistics" first-run="1522925263645" have-been-shown="false" show-in-other="true" show-in-compilation="true">
@@ -67,7 +68,7 @@
     <feature id="editing.completion.postfix" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.introduceVariable.incompleteStatement" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="dir.diff" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="editing.select.word" count="6" last-shown="0" last-used="1522926126661" shown-count="0" />
+    <feature id="editing.select.word" count="17" last-shown="0" last-used="1522934943943" shown-count="0" />
     <feature id="editing.add.carets.using.double.ctrl" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="codeassists.quickjavadoc.lookup" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="ui.scheme.quickswitch" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -100,17 +101,18 @@
   </component>
   <component name="ShortcutsCollector">
     <counts>
-      <entry shortcut="Backspace" count="13" />
-      <entry shortcut="Enter" count="1" />
+      <entry shortcut="Backspace" count="19" />
+      <entry shortcut="Enter" count="3" />
       <entry shortcut="Meta+C" count="1" />
       <entry shortcut="Meta+V" count="1" />
+      <entry shortcut="Meta+X" count="1" />
       <entry shortcut="Meta+Z" count="1" />
       <entry shortcut="Up" count="1" />
     </counts>
   </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="10" />
+      <entry feature="ideaapp.started" count="14" />
       <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
     </counts>
   </component>
