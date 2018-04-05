@@ -25,21 +25,16 @@ public class MyActionClass extends AnAction {
         /*
          * TO DO
          * Set focus of input text field
+         * Style inputdialog
          * Configurable settings
          *  - default component group
          *  - if null, then can save new entry
-         * Tickbox for client libs
-         * HTML Id generator
-         * Add Id in Less Wrapper
-         * Add Default JS Anon selector/onclick.
-         * Tickbox for CQDialog
+         *  - default html/less/js templates (hard)
          * Add in more default nodes in CQDialog so you can go in and delete it after
-         * Give options for config? IE clientlibs embed etc?
+         * Option for 'flat' or editor/site clientlibs
          * Ensure dialog is smooth experience with keyboard
          * Test export
-         * make README
-         * Make test whether its a file or folder
-         * make decent JFrame inputdialog
+         * Round off ReadME
          */
 
         //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
