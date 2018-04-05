@@ -20,4 +20,12 @@ clientlibs.content.xmljacks-component.html	editorsite
 clientlibsrtrtghrth.html.content.xml	editorsite
 css.txt	js.txtjsless.content.xmlrtrtghrth.jsrtrtghrth.lessjsless.content.xmltes_cq_dialog.xmltes.html
 clientlibs.content.xml	editorsite
-css.txt	js.txtjsless.content.xml	tes.jstes.lessjsless.content.xml_cq_editConfig.xml
+css.txt	js.txtjsless.content.xml	tes.jstes.lessjsless.content.xml_cq_editConfig.xml	editor.content.xml_cq_dialog.xmlmy-component.htmlmy-component.content.xmllessjsmy-component.lessmy-component.js.content.xmllessjs	js.txt
+css.txtsite
+clientlibs_cq_editConfig.xml.content.xmljsmy-component.lesslessmy-component.js.content.xmlless	js.txt
+css.txtsite	editor.content.xml
+clientlibs_cq_editConfig.xml_cq_dialog.xmlmy-component.htmljsmy-component.content.xmllessjstestme.less	testme.js.content.xmljs	js.txt
+css.txtsite	editor.content.xml
+clientlibs_cq_editConfig.xmltestme.html_cq_dialog.xml	testmelesssite	editor_cq_dialog.xml.content.xml_cq_editConfig.xml.html
+clientlibs.content.xmllessjs.less.js.content.xmllessjs	js.txt
+css.txt

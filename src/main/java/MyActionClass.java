@@ -16,11 +16,14 @@ public class MyActionClass extends AnAction {
 
     private String currentDir = "";
     private String componentName = "";
+    private String componentGroup = "";
+
     @Override
     public void actionPerformed(AnActionEvent e) {
 
         /*
          * TO DO
+         * Set focus of input text field
          * Component Group Dialog
          * JSON config in root of project
          *  - default component group
@@ -40,7 +43,28 @@ public class MyActionClass extends AnAction {
          * make decent JFrame inputdialog
          */
 
-        componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
+        //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
+
+        JTextField componentNameInput = new JTextField();
+        JTextField componentGroupInput = new JTextField();
+        Object[] message = {
+                "Component Name:", componentNameInput,
+                "Component Group:", componentGroupInput
+        };
+
+        int option = JOptionPane.showConfirmDialog(null, message, "Create", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION) {
+            if (componentNameInput.getText().equals("h") && componentGroupInput.getText().equals("h")) {
+                System.out.println("Login successful");
+            } else {
+                System.out.println("login failed");
+            }
+        } else {
+            System.out.println("Login canceled");
+        }
+
+        componentName = componentNameInput.getText();
+        componentGroup = componentGroupInput.getText();
 
         this.currentDir = getCurrentWorkingDirectory(e);
 
@@ -48,7 +72,6 @@ public class MyActionClass extends AnAction {
         createFolder(componentName);
 
         // create .content.xml
-        String componentGroup = "Creditsafe";
         createContentXML(componentName,componentGroup);
 
         // create CQ Dialog

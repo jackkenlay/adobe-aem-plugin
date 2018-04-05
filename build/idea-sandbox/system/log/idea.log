@@ -500,3 +500,640 @@ Max  duration:    326ms (it was 'Run context configuration action update (class 
 2018-04-05 12:15:02,119 [1506099]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 16; ProcessIOExecutorService threads: 3 
 2018-04-05 12:15:02,120 [1506100]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2018-04-05 12:15:02,121 [1506101]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:28:21,483 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2018-04-05 12:28:21,852 [    369]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-181.4203.550, 26 Mar 2018 21:21) 
+2018-04-05 12:28:21,853 [    370]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.13.3, x86_64) 
+2018-04-05 12:28:21,853 [    370]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_152-release-1136-b20 (JetBrains s.r.o) 
+2018-04-05 12:28:21,853 [    370]   INFO -        #com.intellij.idea.Main - JVM: 25.152-b20 (OpenJDK 64-Bit Server VM) 
+2018-04-05 12:28:21,870 [    387]   INFO -        #com.intellij.idea.Main - JVM Args: -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/plugins -Didea.required.plugins.id=org.jetbrains -Didea.smooth.progress=false -Didea.system.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/system -XX:MaxPermSize=250m -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea 
+2018-04-05 12:28:21,870 [    387]   INFO -        #com.intellij.idea.Main - ext: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbrex8u152b1136.20_osx_x64/jdk/Contents/Home/jre/lib/ext: [sunec.jar, nashorn.jar, cldrdata.jar, jfxrt.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2018-04-05 12:28:21,870 [    387]   INFO -        #com.intellij.idea.Main - ext: /System/Library/Java/Extensions: [MRJToolkit.jar] 
+2018-04-05 12:28:21,870 [    387]   INFO -        #com.intellij.idea.Main - JNU charset: UTF-8 
+2018-04-05 12:28:21,888 [    405]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 18 ms 
+2018-04-05 12:28:21,917 [    434]   INFO -        #com.intellij.idea.Main - initializing environment 
+2018-04-05 12:28:21,919 [    436]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/printenv.py' '/private/var/folders/jb/_qndynq176n17vdtygq80gsh0000gn/T/intellij-shell-env.tmp' 
+2018-04-05 12:28:21,939 [    456]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2018-04-05 12:28:21,939 [    456]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 2.0 (JRE-managed HiDPI) 
+2018-04-05 12:28:22,458 [    975]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (20 vars) 
+2018-04-05 12:28:23,479 [   1996]   INFO - .intellij.idea.IdeaApplication - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@5ded4e44[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@1dc6aa82 
+2018-04-05 12:28:24,517 [   3034]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2018-04-05 12:28:25,071 [   3588]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 1123 ms 
+2018-04-05 12:28:25,076 [   3593]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.0), Ant Support (1.0), Bytecode Viewer (0.1), CVS Integration (11), Copyright (8.1), Coverage (181.4203.550), Eclipse Integration (3.0), EditorConfig (181.4203.550), Git Integration (8.1), GitHub (181.4203.550), Gradle (181.4203.550), Groovy (9.0), I18n for Java (181.4203.550), IDEA CORE (181.4203.550), IntelliLang (8.0), JUnit (1.0), Java Bytecode Decompiler (181.4203.550), Java Stream Debugger (181.4203.550), JavaFX (1.0), Kotlin (1.2.30-release-IJ2018.1-1), Maven Integration (181.4203.550), Mercurial Integration (10.0), Plugin DevKit (1.0), Properties Support (181.4203.550), Settings Repository (181.4203.550), Smali Support (1.0), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TestNG-J (8.0), UI Designer (181.4203.550), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML (181.4203.550) 
+2018-04-05 12:28:25,076 [   3593]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: my_plugin (1.0-SNAPSHOT) 
+2018-04-05 12:28:26,200 [   4717]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2018-04-05 12:28:26,302 [   4819]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/mac/fsnotifier 
+2018-04-05 12:28:26,335 [   4852]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2018-04-05 12:28:26,590 [   5107]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2018-04-05 12:28:26,591 [   5108]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2018-04-05 12:28:27,164 [   5681]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: Git4Idea] 
+2018-04-05 12:28:27,201 [   5718]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: hg4idea] 
+2018-04-05 12:28:27,548 [   6065]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.OptionsTopHitProvider$Activity@7b9d7c01 
+2018-04-05 12:28:27,646 [   6163]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2018-04-05 12:28:27,673 [   6190]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2018-04-05 12:28:27,775 [   6292]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2018-04-05 12:28:28,096 [   6613]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:259, number of extensions:44 
+2018-04-05 12:28:28,101 [   6618]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:4 
+2018-04-05 12:28:28,153 [   6670]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:26, number of extensions:49 
+2018-04-05 12:28:28,155 [   6672]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:1 
+2018-04-05 12:28:28,807 [   7324]   INFO - plication.impl.ApplicationImpl - 89 application components initialized in 4863ms 
+2018-04-05 12:28:28,899 [   7416]   INFO - .intellij.idea.IdeaApplication - App initialization took 8619 ms 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 509 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 175 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 143 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 53 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - CVS loaded 40 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 31 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2018-04-05 12:28:28,900 [   7417]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 22 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 18 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 15 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 14 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 13 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 13 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 12 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 11 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 10 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 9 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 7 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 6 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 1 classes 
+2018-04-05 12:28:28,901 [   7418]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 1 classes 
+2018-04-05 12:28:29,180 [   7697]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present. 
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2018-04-05 12:28:29,838 [   8355]   INFO - pl$FileIndexDataInitialization - Initialization done:1737 
+2018-04-05 12:28:29,972 [   8489]   INFO - exImpl$StubIndexInitialization - Initialization done:134 
+2018-04-05 12:28:30,601 [   9118]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2018-04-05 12:28:30,728 [   9245]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.openapi.actionSystem.impl.ActionPreloader@747f91df 
+2018-04-05 12:28:32,619 [  11136]   INFO - ellij.project.impl.ProjectImpl - 154 project components initialized in 2704 ms 
+2018-04-05 12:28:32,630 [  11147]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.search.SearchableOptionPreloader@6bf0b493 
+2018-04-05 12:28:32,855 [  11372]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 233 ms 
+2018-04-05 12:28:32,941 [  11458]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.codeInsight.completion.CompletionPreloader@2c4c6cd2 
+2018-04-05 12:28:32,947 [  11464]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.actions.GotoClassPresentationUpdater@e9a747c 
+2018-04-05 12:28:33,036 [  11553]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2018-04-05 12:28:33,585 [  12102]   INFO - CompilerBackwardReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException 
+2018-04-05 12:28:33,974 [  12491]   INFO - ntellij.internal.IconsLoadTime - PNG load time: ide_startup=30.60ms, average=0.42ms, median=0.18ms; number of icons: 73 
+2018-04-05 12:28:34,092 [  12609]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@796919c6 
+2018-04-05 12:28:34,123 [  12640]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 27ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:28:34,480 [  12997]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2018-04-05 12:28:35,031 [  13548]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 1051ms under project opening modal progress 
+2018-04-05 12:28:35,136 [  13653]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 6 millis 
+2018-04-05 12:28:35,167 [  13684]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 1240ms; general responsiveness: ok; EDT responsiveness: 0/1 sluggish, 1/1 very slow 
+2018-04-05 12:28:35,220 [  13737]   INFO - ntellij.internal.IconsLoadTime - PNG load time: total=38.82ms, average=0.39ms, median=0.34ms; number of icons: 100 
+2018-04-05 12:28:36,876 [  15393]   INFO - j.ide.ui.OptionsTopHitProvider - 407 ms spent to cache options in application 
+2018-04-05 12:28:37,229 [  15746]   INFO - tartup.impl.StartupManagerImpl - /Users/jackkenlay/IdeaProjects/untitled1/.idea case-sensitivity: expected=false actual=false 
+2018-04-05 12:28:37,248 [  15765]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2018-04-05 12:28:37,965 [  16482]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 3840ms; general responsiveness: ok; EDT responsiveness: 3/4 sluggish, 1/4 very slow 
+2018-04-05 12:28:38,065 [  16582]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2018-04-05 12:28:38,076 [  16593]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 8435 ms 
+2018-04-05 12:28:38,076 [  16593]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 2255 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1332 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 524 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 212 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 210 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 111 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 107 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 104 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - CVS loaded 79 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 70 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 63 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 62 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 56 classes 
+2018-04-05 12:28:38,077 [  16594]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 45 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 45 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 36 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 30 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 26 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 23 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 19 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 16 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 14 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 13 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 11 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 6 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 5 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 4 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2018-04-05 12:28:38,078 [  16595]   INFO - llij.ide.plugins.PluginManager - org.jetbrains loaded 1 classes 
+2018-04-05 12:28:38,125 [  16642]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:28:38,134 [  16651]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:28:38,987 [  17504]   INFO - j.ide.ui.OptionsTopHitProvider - 262 ms spent to cache options in project 
+2018-04-05 12:28:39,085 [  17602]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@1c0e02e6 
+2018-04-05 12:28:39,110 [  17627]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@6e70c0b2 
+2018-04-05 12:28:39,318 [  17835]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:28:39,322 [  17839]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:28:39,409 [  17926]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@6e349437 
+2018-04-05 12:28:39,512 [  18029]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:28:39,512 [  18029]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:28:39,822 [  18339]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2018-04-05 12:28:53,179 [  31696]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.openapi.roots.impl.PushedFilePropertiesUpdaterImpl$3@6a0964f6 
+2018-04-05 12:28:53,228 [  31745]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:28:53,231 [  31748]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:30:25,578 [ 124095]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2018-04-05 12:30:25,641 [ 124158]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2018-04-05 12:30:25,642 [ 124159]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2018-04-05 12:30:25,642 [ 124159]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2018-04-05 12:30:25,643 [ 124160]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2018-04-05 12:30:25,645 [ 124162]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2018-04-05 12:30:25,645 [ 124162]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2018-04-05 12:30:25,646 [ 124163]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:33:24,630 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2018-04-05 12:33:24,820 [    190]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-181.4203.550, 26 Mar 2018 21:24) 
+2018-04-05 12:33:24,820 [    190]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.13.3, x86_64) 
+2018-04-05 12:33:24,820 [    190]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_152-release-1136-b20 (JetBrains s.r.o) 
+2018-04-05 12:33:24,820 [    190]   INFO -        #com.intellij.idea.Main - JVM: 25.152-b20 (OpenJDK 64-Bit Server VM) 
+2018-04-05 12:33:24,833 [    203]   INFO -        #com.intellij.idea.Main - JVM Args: -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/plugins -Didea.required.plugins.id=org.jetbrains -Didea.smooth.progress=false -Didea.system.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/system -XX:MaxPermSize=250m -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea 
+2018-04-05 12:33:24,833 [    203]   INFO -        #com.intellij.idea.Main - ext: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbrex8u152b1136.20_osx_x64/jdk/Contents/Home/jre/lib/ext: [sunec.jar, nashorn.jar, cldrdata.jar, jfxrt.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2018-04-05 12:33:24,833 [    203]   INFO -        #com.intellij.idea.Main - ext: /System/Library/Java/Extensions: [MRJToolkit.jar] 
+2018-04-05 12:33:24,833 [    203]   INFO -        #com.intellij.idea.Main - JNU charset: UTF-8 
+2018-04-05 12:33:24,850 [    220]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 17 ms 
+2018-04-05 12:33:24,865 [    235]   INFO -        #com.intellij.idea.Main - initializing environment 
+2018-04-05 12:33:24,866 [    236]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/printenv.py' '/private/var/folders/jb/_qndynq176n17vdtygq80gsh0000gn/T/intellij-shell-env.tmp' 
+2018-04-05 12:33:24,884 [    254]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2018-04-05 12:33:24,884 [    254]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 2.0 (JRE-managed HiDPI) 
+2018-04-05 12:33:25,396 [    766]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (20 vars) 
+2018-04-05 12:33:26,371 [   1741]   INFO - .intellij.idea.IdeaApplication - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@2370c815[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@1229d71 
+2018-04-05 12:33:27,270 [   2640]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2018-04-05 12:33:27,737 [   3107]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 948 ms 
+2018-04-05 12:33:27,741 [   3111]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.0), Ant Support (1.0), Bytecode Viewer (0.1), CVS Integration (11), Copyright (8.1), Coverage (181.4203.550), Eclipse Integration (3.0), EditorConfig (181.4203.550), Git Integration (8.1), GitHub (181.4203.550), Gradle (181.4203.550), Groovy (9.0), I18n for Java (181.4203.550), IDEA CORE (181.4203.550), IntelliLang (8.0), JUnit (1.0), Java Bytecode Decompiler (181.4203.550), Java Stream Debugger (181.4203.550), JavaFX (1.0), Kotlin (1.2.30-release-IJ2018.1-1), Maven Integration (181.4203.550), Mercurial Integration (10.0), Plugin DevKit (1.0), Properties Support (181.4203.550), Settings Repository (181.4203.550), Smali Support (1.0), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TestNG-J (8.0), UI Designer (181.4203.550), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML (181.4203.550) 
+2018-04-05 12:33:27,741 [   3111]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: my_plugin (1.0-SNAPSHOT) 
+2018-04-05 12:33:28,566 [   3936]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2018-04-05 12:33:28,627 [   3997]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/mac/fsnotifier 
+2018-04-05 12:33:28,644 [   4014]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2018-04-05 12:33:28,855 [   4225]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2018-04-05 12:33:28,855 [   4225]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2018-04-05 12:33:29,286 [   4656]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: Git4Idea] 
+2018-04-05 12:33:29,309 [   4679]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: hg4idea] 
+2018-04-05 12:33:29,545 [   4915]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.OptionsTopHitProvider$Activity@29a81d36 
+2018-04-05 12:33:29,676 [   5046]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2018-04-05 12:33:29,696 [   5066]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2018-04-05 12:33:29,794 [   5164]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2018-04-05 12:33:30,041 [   5411]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:193, number of extensions:44 
+2018-04-05 12:33:30,045 [   5415]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:4 
+2018-04-05 12:33:30,074 [   5444]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:18, number of extensions:49 
+2018-04-05 12:33:30,074 [   5444]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:0 
+2018-04-05 12:33:30,372 [   5742]   INFO - plication.impl.ApplicationImpl - 89 application components initialized in 3590ms 
+2018-04-05 12:33:30,577 [   5947]   INFO - .intellij.idea.IdeaApplication - App initialization took 7020 ms 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 333 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 171 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 125 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 48 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - CVS loaded 40 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 31 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 18 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 18 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 14 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 13 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 13 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 12 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 11 classes 
+2018-04-05 12:33:30,580 [   5950]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 10 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 10 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 9 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 7 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 6 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 1 classes 
+2018-04-05 12:33:30,581 [   5951]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 1 classes 
+2018-04-05 12:33:30,860 [   6230]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present. 
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2018-04-05 12:33:31,122 [   6492]   INFO - pl$FileIndexDataInitialization - Initialization done:1076 
+2018-04-05 12:33:31,431 [   6801]   INFO - exImpl$StubIndexInitialization - Initialization done:308 
+2018-04-05 12:33:32,116 [   7486]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.openapi.actionSystem.impl.ActionPreloader@22b46f8b 
+2018-04-05 12:33:32,198 [   7568]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2018-04-05 12:33:34,103 [   9473]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.search.SearchableOptionPreloader@271e2318 
+2018-04-05 12:33:34,208 [   9578]   INFO - ellij.project.impl.ProjectImpl - 154 project components initialized in 2603 ms 
+2018-04-05 12:33:34,373 [   9743]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.codeInsight.completion.CompletionPreloader@172ab14d 
+2018-04-05 12:33:34,384 [   9754]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.actions.GotoClassPresentationUpdater@1f5be11b 
+2018-04-05 12:33:34,405 [   9775]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 196 ms 
+2018-04-05 12:33:34,537 [   9907]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2018-04-05 12:33:35,019 [  10389]   INFO - CompilerBackwardReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException 
+2018-04-05 12:33:35,352 [  10722]   INFO - ntellij.internal.IconsLoadTime - PNG load time: ide_startup=35.05ms, average=0.50ms, median=0.51ms; number of icons: 70 
+2018-04-05 12:33:35,471 [  10841]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@70b04abe 
+2018-04-05 12:33:35,521 [  10891]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 47ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:33:35,759 [  11129]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2018-04-05 12:33:36,368 [  11738]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 1007ms under project opening modal progress 
+2018-04-05 12:33:36,440 [  11810]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 10 millis 
+2018-04-05 12:33:36,472 [  11842]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 1149ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:33:36,587 [  11957]   INFO - ntellij.internal.IconsLoadTime - PNG load time: total=42.41ms, average=0.42ms, median=0.57ms; number of icons: 100 
+2018-04-05 12:33:38,270 [  13640]   INFO - j.ide.ui.OptionsTopHitProvider - 332 ms spent to cache options in application 
+2018-04-05 12:33:38,548 [  13918]   INFO - tartup.impl.StartupManagerImpl - /Users/jackkenlay/IdeaProjects/untitled1/.idea case-sensitivity: expected=false actual=false 
+2018-04-05 12:33:38,570 [  13940]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2018-04-05 12:33:39,200 [  14570]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 7775 ms 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 2271 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1353 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 546 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 215 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 210 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 111 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 107 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 104 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 102 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - CVS loaded 79 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 63 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 61 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 57 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 56 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 45 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 45 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 36 classes 
+2018-04-05 12:33:39,201 [  14571]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 32 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 29 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 23 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 18 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 16 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 14 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 13 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 11 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 5 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 4 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2018-04-05 12:33:39,202 [  14572]   INFO - llij.ide.plugins.PluginManager - org.jetbrains loaded 1 classes 
+2018-04-05 12:33:39,259 [  14629]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 3736ms; general responsiveness: ok; EDT responsiveness: 2/4 sluggish 
+2018-04-05 12:33:39,310 [  14680]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2018-04-05 12:33:39,375 [  14745]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:33:39,382 [  14752]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:33:39,942 [  15312]   INFO - j.ide.ui.OptionsTopHitProvider - 249 ms spent to cache options in project 
+2018-04-05 12:33:39,981 [  15351]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@3fd424d4 
+2018-04-05 12:33:40,085 [  15455]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@65325a7f 
+2018-04-05 12:33:40,306 [  15676]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:33:40,306 [  15676]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:33:40,368 [  15738]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@255d7924 
+2018-04-05 12:33:40,432 [  15802]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:33:40,432 [  15802]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:33:41,047 [  16417]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2018-04-05 12:34:05,929 [  41299]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.openapi.roots.impl.PushedFilePropertiesUpdaterImpl$3@d37baf5 
+2018-04-05 12:34:06,006 [  41376]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:34:06,007 [  41377]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:35:56,240 [ 151610]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 16 ms 
+2018-04-05 12:35:56,600 [ 151970]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2018-04-05 12:35:56,600 [ 151970]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2018-04-05 12:35:56,601 [ 151971]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2018-04-05 12:35:56,624 [ 151994]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2018-04-05 12:35:56,626 [ 151996]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:35:56,628 [ 151998]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2018-04-05 12:35:56,635 [ 152005]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2018-04-05 12:35:56,637 [ 152007]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2018-04-05 12:35:56,643 [ 152013]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2018-04-05 12:35:56,645 [ 152015]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     30
+Total time spent: 412ms
+Average duration: 13ms
+Median  duration: 4ms
+Max  duration:    73ms (it was 'write action (class com.intellij.ide.util.DeleteHandler$$Lambda$1618/1897358556)') 
+2018-04-05 12:35:56,646 [ 152016]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     4190
+Total time spent: 710ms
+Average duration: 0ms
+Median  duration: 0ms
+Max  duration:    267ms (it was 'Run context configuration action update (class com.intellij.execution.actions.RunContextAction)') 
+2018-04-05 12:35:56,646 [ 152016]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 9; ProcessIOExecutorService threads: 3 
+2018-04-05 12:35:56,649 [ 152019]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2018-04-05 12:35:56,650 [ 152020]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:36:26,890 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2018-04-05 12:36:27,081 [    191]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-181.4203.550, 26 Mar 2018 21:27) 
+2018-04-05 12:36:27,081 [    191]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.13.3, x86_64) 
+2018-04-05 12:36:27,081 [    191]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_152-release-1136-b20 (JetBrains s.r.o) 
+2018-04-05 12:36:27,081 [    191]   INFO -        #com.intellij.idea.Main - JVM: 25.152-b20 (OpenJDK 64-Bit Server VM) 
+2018-04-05 12:36:27,094 [    204]   INFO -        #com.intellij.idea.Main - JVM Args: -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/plugins -Didea.required.plugins.id=org.jetbrains -Didea.smooth.progress=false -Didea.system.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/system -XX:MaxPermSize=250m -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea 
+2018-04-05 12:36:27,094 [    204]   INFO -        #com.intellij.idea.Main - ext: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbrex8u152b1136.20_osx_x64/jdk/Contents/Home/jre/lib/ext: [sunec.jar, nashorn.jar, cldrdata.jar, jfxrt.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2018-04-05 12:36:27,094 [    204]   INFO -        #com.intellij.idea.Main - ext: /System/Library/Java/Extensions: [MRJToolkit.jar] 
+2018-04-05 12:36:27,094 [    204]   INFO -        #com.intellij.idea.Main - JNU charset: UTF-8 
+2018-04-05 12:36:27,109 [    219]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 14 ms 
+2018-04-05 12:36:27,126 [    236]   INFO -        #com.intellij.idea.Main - initializing environment 
+2018-04-05 12:36:27,129 [    239]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/printenv.py' '/private/var/folders/jb/_qndynq176n17vdtygq80gsh0000gn/T/intellij-shell-env.tmp' 
+2018-04-05 12:36:27,146 [    256]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2018-04-05 12:36:27,146 [    256]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 2.0 (JRE-managed HiDPI) 
+2018-04-05 12:36:27,664 [    774]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (20 vars) 
+2018-04-05 12:36:28,635 [   1745]   INFO - .intellij.idea.IdeaApplication - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@df2a76[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@12647223 
+2018-04-05 12:36:29,517 [   2627]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2018-04-05 12:36:29,985 [   3095]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 941 ms 
+2018-04-05 12:36:29,989 [   3099]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.0), Ant Support (1.0), Bytecode Viewer (0.1), CVS Integration (11), Copyright (8.1), Coverage (181.4203.550), Eclipse Integration (3.0), EditorConfig (181.4203.550), Git Integration (8.1), GitHub (181.4203.550), Gradle (181.4203.550), Groovy (9.0), I18n for Java (181.4203.550), IDEA CORE (181.4203.550), IntelliLang (8.0), JUnit (1.0), Java Bytecode Decompiler (181.4203.550), Java Stream Debugger (181.4203.550), JavaFX (1.0), Kotlin (1.2.30-release-IJ2018.1-1), Maven Integration (181.4203.550), Mercurial Integration (10.0), Plugin DevKit (1.0), Properties Support (181.4203.550), Settings Repository (181.4203.550), Smali Support (1.0), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TestNG-J (8.0), UI Designer (181.4203.550), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML (181.4203.550) 
+2018-04-05 12:36:29,989 [   3099]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: my_plugin (1.0-SNAPSHOT) 
+2018-04-05 12:36:30,868 [   3978]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2018-04-05 12:36:30,924 [   4034]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/mac/fsnotifier 
+2018-04-05 12:36:30,938 [   4048]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2018-04-05 12:36:31,174 [   4284]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2018-04-05 12:36:31,174 [   4284]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2018-04-05 12:36:31,614 [   4724]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: Git4Idea] 
+2018-04-05 12:36:31,643 [   4753]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: hg4idea] 
+2018-04-05 12:36:31,896 [   5006]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.OptionsTopHitProvider$Activity@47a323a5 
+2018-04-05 12:36:32,072 [   5182]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2018-04-05 12:36:32,094 [   5204]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2018-04-05 12:36:32,201 [   5311]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2018-04-05 12:36:32,465 [   5575]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:199, number of extensions:44 
+2018-04-05 12:36:32,468 [   5578]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:3 
+2018-04-05 12:36:32,500 [   5610]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:21, number of extensions:49 
+2018-04-05 12:36:32,500 [   5610]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:0 
+2018-04-05 12:36:32,848 [   5958]   INFO - plication.impl.ApplicationImpl - 89 application components initialized in 3809ms 
+2018-04-05 12:36:33,061 [   6171]   INFO - .intellij.idea.IdeaApplication - App initialization took 7011 ms 
+2018-04-05 12:36:33,064 [   6174]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 333 classes 
+2018-04-05 12:36:33,064 [   6174]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 175 classes 
+2018-04-05 12:36:33,064 [   6174]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 135 classes 
+2018-04-05 12:36:33,064 [   6174]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 50 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - CVS loaded 40 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 31 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 22 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 18 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 14 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 13 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 13 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 12 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 11 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 10 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 10 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 9 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 7 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 6 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 1 classes 
+2018-04-05 12:36:33,065 [   6175]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 1 classes 
+2018-04-05 12:36:33,675 [   6785]   INFO - pl$FileIndexDataInitialization - Initialization done:1206 
+2018-04-05 12:36:33,824 [   6934]   INFO - exImpl$StubIndexInitialization - Initialization done:148 
+2018-04-05 12:36:33,879 [   6989]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2018-04-05 12:36:34,390 [   7500]   INFO - j.ide.ui.OptionsTopHitProvider - 680 ms spent to cache options in application 
+2018-04-05 12:36:34,733 [   7843]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.openapi.actionSystem.impl.ActionPreloader@4baef8e8 
+2018-04-05 12:36:36,010 [   9120]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.search.SearchableOptionPreloader@1a14c984 
+2018-04-05 12:36:36,220 [   9330]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.codeInsight.completion.CompletionPreloader@721efe4 
+2018-04-05 12:36:36,227 [   9337]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.actions.GotoClassPresentationUpdater@6dec325c 
+2018-04-05 12:36:37,930 [  11040]   INFO - ellij.project.impl.ProjectImpl - 154 project components initialized in 1932 ms 
+2018-04-05 12:36:38,122 [  11232]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 191 ms 
+2018-04-05 12:36:38,269 [  11379]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2018-04-05 12:36:38,365 [  11475]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present. 
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2018-04-05 12:36:38,906 [  12016]   INFO - ntellij.internal.IconsLoadTime - PNG load time: total=95.57ms, average=0.96ms, median=0.30ms; number of icons: 100 
+2018-04-05 12:36:38,998 [  12108]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 22 ms 
+2018-04-05 12:36:39,159 [  12269]   INFO - CompilerBackwardReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException 
+2018-04-05 12:36:39,555 [  12665]   INFO - ntellij.internal.IconsLoadTime - PNG load time: ide_startup=104.18ms, average=0.84ms, median=0.37ms; number of icons: 124 
+2018-04-05 12:36:39,681 [  12791]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@f6b98ed 
+2018-04-05 12:36:39,689 [  12799]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 123ms under project opening modal progress 
+2018-04-05 12:36:39,718 [  12828]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 34ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:36:39,760 [  12870]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 5 millis 
+2018-04-05 12:36:39,797 [  12907]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 264ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:36:40,652 [  13762]   INFO - tartup.impl.StartupManagerImpl - /Users/jackkenlay/IdeaProjects/untitled1/.idea case-sensitivity: expected=false actual=false 
+2018-04-05 12:36:40,665 [  13775]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2018-04-05 12:36:41,121 [  14231]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 5150 ms 
+2018-04-05 12:36:41,122 [  14232]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 2192 classes 
+2018-04-05 12:36:41,122 [  14232]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1262 classes 
+2018-04-05 12:36:41,122 [  14232]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 509 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 210 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 208 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 112 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 107 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 104 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - CVS loaded 81 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 66 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 60 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 59 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 58 classes 
+2018-04-05 12:36:41,124 [  14234]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 46 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 43 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 36 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 29 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 23 classes 
+2018-04-05 12:36:41,129 [  14239]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 23 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 14 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 14 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 13 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 10 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 6 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 6 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 5 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 4 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2018-04-05 12:36:41,130 [  14240]   INFO - llij.ide.plugins.PluginManager - org.jetbrains loaded 1 classes 
+2018-04-05 12:36:43,056 [  16166]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 3336ms; general responsiveness: ok; EDT responsiveness: 2/4 sluggish 
+2018-04-05 12:36:43,057 [  16167]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update started: 6 files to update 
+2018-04-05 12:36:43,184 [  16294]   INFO - .diagnostic.PerformanceWatcher - Unindexed files update took 128ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:36:43,185 [  16295]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2018-04-05 12:36:43,188 [  16298]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:36:43,194 [  16304]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:36:43,690 [  16800]   INFO - j.ide.ui.OptionsTopHitProvider - 234 ms spent to cache options in project 
+2018-04-05 12:36:43,715 [  16825]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@5835a4b 
+2018-04-05 12:36:43,756 [  16866]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@f6f0429 
+2018-04-05 12:36:43,794 [  16904]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:36:43,798 [  16908]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:36:43,816 [  16926]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@370130e 
+2018-04-05 12:36:43,819 [  16929]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:36:43,820 [  16930]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:36:44,134 [  17244]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2018-04-05 12:37:00,698 [  33808]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.openapi.roots.impl.PushedFilePropertiesUpdaterImpl$3@424e21f2 
+2018-04-05 12:37:00,739 [  33849]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:37:00,739 [  33849]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:37:05,933 [  39043]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2018-04-05 12:37:06,684 [  39794]   INFO - tellij.xml.Html5SchemaProvider - HTML5_SCHEMA_LOCATION = /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/lib/platform-impl.jar!/resources/html5-schema/html5.rnc 
+2018-04-05 12:37:06,684 [  39794]   INFO - tellij.xml.Html5SchemaProvider - XHTML5_SCHEMA_LOCATION = /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/lib/platform-impl.jar!/resources/html5-schema/xhtml5.rnc 
+2018-04-05 12:37:06,684 [  39794]   INFO - tellij.xml.Html5SchemaProvider - CHARS_DTD_LOCATION = /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/lib/platform-impl.jar!/resources/html5-schema/html5chars.ent 
+2018-04-05 12:39:00,028 [ 153138]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.openapi.roots.impl.PushedFilePropertiesUpdaterImpl$3@3e644c01 
+2018-04-05 12:39:00,068 [ 153178]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:39:00,070 [ 153180]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:39:03,817 [ 156927]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2018-04-05 12:39:03,817 [ 156927]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2018-04-05 12:39:03,817 [ 156927]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2018-04-05 12:39:03,861 [ 156971]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2018-04-05 12:39:03,864 [ 156974]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:39:03,867 [ 156977]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2018-04-05 12:39:03,874 [ 156984]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2018-04-05 12:39:03,876 [ 156986]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2018-04-05 12:39:03,885 [ 156995]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2018-04-05 12:39:03,887 [ 156997]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     31
+Total time spent: 285ms
+Average duration: 9ms
+Median  duration: 2ms
+Max  duration:    71ms (it was 'write action (class com.intellij.openapi.application.WriteAction)') 
+2018-04-05 12:39:03,891 [ 157001]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     6201
+Total time spent: 607ms
+Average duration: 0ms
+Median  duration: 0ms
+Max  duration:    282ms (it was 'Run context configuration action update (class com.intellij.execution.actions.RunContextAction)') 
+2018-04-05 12:39:03,892 [ 157002]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 9; ProcessIOExecutorService threads: 3 
+2018-04-05 12:39:03,896 [ 157006]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2018-04-05 12:39:03,898 [ 157008]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:39:12,107 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2018-04-05 12:39:12,316 [    209]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-181.4203.550, 26 Mar 2018 21:12) 
+2018-04-05 12:39:12,316 [    209]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.13.3, x86_64) 
+2018-04-05 12:39:12,316 [    209]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_152-release-1136-b20 (JetBrains s.r.o) 
+2018-04-05 12:39:12,316 [    209]   INFO -        #com.intellij.idea.Main - JVM: 25.152-b20 (OpenJDK 64-Bit Server VM) 
+2018-04-05 12:39:12,332 [    225]   INFO -        #com.intellij.idea.Main - JVM Args: -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/plugins -Didea.required.plugins.id=org.jetbrains -Didea.smooth.progress=false -Didea.system.path=/Users/jackkenlay/personal/adobe-aem-plugin/build/idea-sandbox/system -XX:MaxPermSize=250m -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea 
+2018-04-05 12:39:12,332 [    225]   INFO -        #com.intellij.idea.Main - ext: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/jbrex8u152b1136.20_osx_x64/jdk/Contents/Home/jre/lib/ext: [sunec.jar, nashorn.jar, cldrdata.jar, jfxrt.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2018-04-05 12:39:12,333 [    226]   INFO -        #com.intellij.idea.Main - ext: /System/Library/Java/Extensions: [MRJToolkit.jar] 
+2018-04-05 12:39:12,333 [    226]   INFO -        #com.intellij.idea.Main - JNU charset: UTF-8 
+2018-04-05 12:39:12,358 [    251]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 25 ms 
+2018-04-05 12:39:12,376 [    269]   INFO -        #com.intellij.idea.Main - initializing environment 
+2018-04-05 12:39:12,377 [    270]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/printenv.py' '/private/var/folders/jb/_qndynq176n17vdtygq80gsh0000gn/T/intellij-shell-env.tmp' 
+2018-04-05 12:39:12,396 [    289]   INFO -     #com.intellij.util.ui.JBUI - User scale factor: 1.0 
+2018-04-05 12:39:12,396 [    289]   INFO -     #com.intellij.util.ui.JBUI - System scale factor: 2.0 (JRE-managed HiDPI) 
+2018-04-05 12:39:12,912 [    805]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (20 vars) 
+2018-04-05 12:39:13,913 [   1806]   INFO - .intellij.idea.IdeaApplication - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@5ded4e44[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@1dc6aa82 
+2018-04-05 12:39:14,813 [   2706]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2018-04-05 12:39:15,306 [   3199]   INFO - llij.ide.plugins.PluginManager - 35 plugins initialized in 977 ms 
+2018-04-05 12:39:15,309 [   3202]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.0), Ant Support (1.0), Bytecode Viewer (0.1), CVS Integration (11), Copyright (8.1), Coverage (181.4203.550), Eclipse Integration (3.0), EditorConfig (181.4203.550), Git Integration (8.1), GitHub (181.4203.550), Gradle (181.4203.550), Groovy (9.0), I18n for Java (181.4203.550), IDEA CORE (181.4203.550), IntelliLang (8.0), JUnit (1.0), Java Bytecode Decompiler (181.4203.550), Java Stream Debugger (181.4203.550), JavaFX (1.0), Kotlin (1.2.30-release-IJ2018.1-1), Maven Integration (181.4203.550), Mercurial Integration (10.0), Plugin DevKit (1.0), Properties Support (181.4203.550), Settings Repository (181.4203.550), Smali Support (1.0), Subversion Integration (1.1), Task Management (1.0), Terminal (0.1), TestNG-J (8.0), UI Designer (181.4203.550), XPathView + XSLT Support (4), XSLT-Debugger (1.4), YAML (181.4203.550) 
+2018-04-05 12:39:15,309 [   3202]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: my_plugin (1.0-SNAPSHOT) 
+2018-04-05 12:39:16,198 [   4091]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=435; buffer=10; max=435 
+2018-04-05 12:39:16,263 [   4156]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Users/jackkenlay/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.1/d082978a55b398ef544e7daee1dd6228b88dbfc1/ideaIC-2018.1/bin/mac/fsnotifier 
+2018-04-05 12:39:16,279 [   4172]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2018-04-05 12:39:16,536 [   4429]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2018-04-05 12:39:16,537 [   4430]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2018-04-05 12:39:16,986 [   4879]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: Git4Idea] 
+2018-04-05 12:39:17,017 [   4910]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: hg4idea] 
+2018-04-05 12:39:17,277 [   5170]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.OptionsTopHitProvider$Activity@2bbd6a0e 
+2018-04-05 12:39:17,445 [   5338]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2018-04-05 12:39:17,471 [   5364]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2018-04-05 12:39:17,565 [   5458]   INFO - gs.impl.UpdateCheckerComponent - channel: release 
+2018-04-05 12:39:17,847 [   5740]   INFO - il.indexing.FileBasedIndexImpl - Index exts enumerated:221, number of extensions:44 
+2018-04-05 12:39:17,851 [   5744]   INFO - il.indexing.FileBasedIndexImpl - Index scheduled:3 
+2018-04-05 12:39:17,877 [   5770]   INFO - tellij.psi.stubs.StubIndexImpl - All stub exts enumerated:16, number of extensions:49 
+2018-04-05 12:39:17,878 [   5771]   INFO - tellij.psi.stubs.StubIndexImpl - stub exts update scheduled:0 
+2018-04-05 12:39:18,234 [   6127]   INFO - plication.impl.ApplicationImpl - 89 application components initialized in 3908ms 
+2018-04-05 12:39:18,451 [   6344]   INFO - .intellij.idea.IdeaApplication - App initialization took 7246 ms 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 372 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 172 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 138 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 50 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - CVS loaded 40 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 31 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 28 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 21 classes 
+2018-04-05 12:39:18,452 [   6345]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 18 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 14 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 13 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 13 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 12 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 11 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 10 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 10 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 9 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 7 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 6 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 2 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 1 classes 
+2018-04-05 12:39:18,453 [   6346]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 1 classes 
+2018-04-05 12:39:19,003 [   6896]   INFO - pl$FileIndexDataInitialization - Initialization done:1152 
+2018-04-05 12:39:19,140 [   7033]   INFO - exImpl$StubIndexInitialization - Initialization done:136 
+2018-04-05 12:39:19,219 [   7112]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2018-04-05 12:39:19,694 [   7587]   INFO - j.ide.ui.OptionsTopHitProvider - 607 ms spent to cache options in application 
+2018-04-05 12:39:20,081 [   7974]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.openapi.actionSystem.impl.ActionPreloader@4d8e03e6 
+2018-04-05 12:39:21,305 [   9198]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.ui.search.SearchableOptionPreloader@1ee778c3 
+2018-04-05 12:39:21,486 [   9379]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.codeInsight.completion.CompletionPreloader@2c6239e0 
+2018-04-05 12:39:21,495 [   9388]   INFO - .openapi.application.Preloader - Finished preloading com.intellij.ide.actions.GotoClassPresentationUpdater@351238f4 
+2018-04-05 12:39:32,665 [  20558]   INFO - ellij.project.impl.ProjectImpl - 154 project components initialized in 1761 ms 
+2018-04-05 12:39:32,866 [  20759]   INFO - le.impl.ModuleManagerComponent - 1 module(s) loaded in 199 ms 
+2018-04-05 12:39:33,005 [  20898]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2018-04-05 12:39:33,098 [  20991]   WARN - j.ui.mac.MacMainFrameDecorator - no url bundle present. 
+To use platform protocol handler to open external links specify required protocols in the mac app layout section of the build file
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2018-04-05 12:39:33,630 [  21523]   INFO - ntellij.internal.IconsLoadTime - PNG load time: total=67.85ms, average=0.68ms, median=0.26ms; number of icons: 100 
+2018-04-05 12:39:33,700 [  21593]   INFO - ellij.project.impl.ProjectImpl - 20 project components initialized in 20 ms 
+2018-04-05 12:39:33,878 [  21771]   INFO - CompilerBackwardReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException 
+2018-04-05 12:39:34,273 [  22166]   INFO - ntellij.internal.IconsLoadTime - PNG load time: ide_startup=73.76ms, average=0.61ms, median=0.31ms; number of icons: 120 
+2018-04-05 12:39:34,401 [  22294]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@6b49656c 
+2018-04-05 12:39:34,407 [  22300]   INFO - tartup.impl.StartupManagerImpl - OpenFilesActivity run in 125ms under project opening modal progress 
+2018-04-05 12:39:34,452 [  22345]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 49ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:39:34,467 [  22360]   INFO - ge.ExternalProjectsDataStorage - Loaded external projects data in 5 millis 
+2018-04-05 12:39:34,488 [  22381]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 231ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:39:35,335 [  23228]   INFO - tartup.impl.StartupManagerImpl - /Users/jackkenlay/IdeaProjects/untitled1/.idea case-sensitivity: expected=false actual=false 
+2018-04-05 12:39:35,348 [  23241]   INFO - pl.projectlevelman.NewMappings - VCS Root: [] - [<Project>] 
+2018-04-05 12:39:35,897 [  23790]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 5026 ms 
+2018-04-05 12:39:35,898 [  23791]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.kotlin loaded 2192 classes 
+2018-04-05 12:39:35,899 [  23792]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.android loaded 1267 classes 
+2018-04-05 12:39:35,899 [  23792]   INFO - llij.ide.plugins.PluginManager - org.intellij.groovy loaded 509 classes 
+2018-04-05 12:39:35,899 [  23792]   INFO - llij.ide.plugins.PluginManager - com.intellij.uiDesigner loaded 210 classes 
+2018-04-05 12:39:35,899 [  23792]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.maven loaded 209 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - Git4Idea loaded 112 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.debugger.streams loaded 107 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - com.intellij.tasks loaded 104 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - CVS loaded 81 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - XPathView loaded 66 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.gradle loaded 60 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - com.intellij.properties loaded 59 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - Subversion loaded 58 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - hg4idea loaded 46 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - DevKit loaded 43 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.settingsRepository loaded 37 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - Coverage loaded 36 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - AntSupport loaded 30 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.javaFX loaded 23 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.github loaded 23 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.yaml loaded 15 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - JUnit loaded 14 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - TestNG-J loaded 13 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.plugins.terminal loaded 10 classes 
+2018-04-05 12:39:35,900 [  23793]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.java.decompiler loaded 7 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - org.intellij.intelliLang loaded 6 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - com.intellij.copyright loaded 6 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - org.editorconfig.editorconfigjetbrains loaded 6 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - com.android.tools.idea.smali loaded 5 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - org.jetbrains.idea.eclipse loaded 5 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - com.intellij.java-i18n loaded 4 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - XSLT-Debugger loaded 2 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - ByteCodeViewer loaded 2 classes 
+2018-04-05 12:39:35,901 [  23794]   INFO - llij.ide.plugins.PluginManager - org.jetbrains loaded 1 classes 
+2018-04-05 12:39:36,884 [  24777]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 2431ms; general responsiveness: ok; EDT responsiveness: 1/2 sluggish 
+2018-04-05 12:39:36,887 [  24780]   INFO - indexing.UnindexedFilesUpdater - Unindexed files update started: 6 files to update 
+2018-04-05 12:39:37,003 [  24896]   INFO - .diagnostic.PerformanceWatcher - Unindexed files update took 116ms; general responsiveness: ok; EDT responsiveness: ok 
+2018-04-05 12:39:37,006 [  24899]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: initial refresh 
+2018-04-05 12:39:37,011 [  24904]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:39:37,021 [  24914]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:39:37,580 [  25473]   INFO - j.ide.ui.OptionsTopHitProvider - 209 ms spent to cache options in project 
+2018-04-05 12:39:37,607 [  25500]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@4cf9f034 
+2018-04-05 12:39:37,648 [  25541]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@230b9288 
+2018-04-05 12:39:37,702 [  25595]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:39:37,703 [  25596]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:39:37,733 [  25626]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@65eba522 
+2018-04-05 12:39:37,751 [  25644]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2018-04-05 12:39:37,752 [  25645]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled1' untitled1 
+2018-04-05 12:39:38,065 [  25958]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2018-04-05 12:39:49,353 [  37246]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2018-04-05 12:40:43,926 [  91819]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2018-04-05 12:40:43,928 [  91821]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2018-04-05 12:40:43,928 [  91821]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2018-04-05 12:40:43,941 [  91834]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2018-04-05 12:40:43,943 [  91836]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-05 12:40:43,949 [  91842]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2018-04-05 12:40:43,952 [  91845]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2018-04-05 12:40:43,954 [  91847]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2018-04-05 12:40:43,962 [  91855]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2018-04-05 12:40:43,964 [  91857]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     25
+Total time spent: 323ms
+Average duration: 12ms
+Median  duration: 2ms
+Max  duration:    149ms (it was 'write action (class com.intellij.configurationStore.FileBasedStorageKt$doWrite$$inlined$runUndoTransparentWriteAction$1$1)') 
+2018-04-05 12:40:43,965 [  91858]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     2067
+Total time spent: 589ms
+Average duration: 0ms
+Median  duration: 0ms
+Max  duration:    280ms (it was 'Run context configuration action update (class com.intellij.execution.actions.RunContextAction)') 
+2018-04-05 12:40:43,965 [  91858]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 9; ProcessIOExecutorService threads: 3 
+2018-04-05 12:40:43,966 [  91859]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2018-04-05 12:40:43,967 [  91860]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
