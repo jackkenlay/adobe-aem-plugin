@@ -21,7 +21,17 @@ public class MyActionClass extends AnAction {
 
         /*
          * TO DO
-         * Test Keyboard shortcut
+         * Component Group Dialog
+         * JSON config in root of project
+         *  - default component group
+         *  - if null, then can save new entry
+         * Tickbox for client libs
+         *  - save entry in JSON for default
+         * HTML Id generator
+         * Add Id in Less Wrapper
+         * Add Default JS Anon selector/onclick.
+         * Tickbox for CQDialog
+         * Add in more default nodes in CQDialog so you can go in and delete it after
          * Give options for config? IE clientlibs embed etc?
          * Ensure dialog is smooth experience with keyboard
          * Test export
