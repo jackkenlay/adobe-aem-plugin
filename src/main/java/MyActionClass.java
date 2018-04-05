@@ -24,6 +24,7 @@ public class MyActionClass extends AnAction {
 
         /*
          * TO DO
+         * Option for 'flat' or editor/site clientlibs
          * Set focus of input text field
          * Style inputdialog
          * Configurable settings
@@ -31,7 +32,6 @@ public class MyActionClass extends AnAction {
          *  - if null, then can save new entry
          *  - default html/less/js templates (hard)
          * Add in more default nodes in CQDialog so you can go in and delete it after
-         * Option for 'flat' or editor/site clientlibs
          * Ensure dialog is smooth experience with keyboard
          * Test export
          * Round off ReadME
