@@ -76,8 +76,10 @@ public class MyActionClass extends AnAction {
         createFile(componentName + "/_cq_dialog.xml", content);
 
         // create JS, LESS configs/files
-        String clientLibsCategory = componentGroup;
-        createClientLibs(componentName, clientLibsCategory);
+        if(createClientLibs){
+            String clientLibsCategory = componentGroup;
+            createClientLibs(componentName, clientLibsCategory);
+        }
 
         // create EditConfig
         createEditConfig(componentName);
