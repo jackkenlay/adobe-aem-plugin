@@ -1,0 +1,22 @@
+<idea-plugin>
+  <id>org.jetbrains</id>
+  <name>my_plugin</name>
+  <version>1.0-SNAPSHOT</version>
+  <vendor email="dummy" url="dummy">dummy</vendor>
+  <description>
+      Sample plugin.&lt;br&gt;
+    </description>
+  <change-notes>
+      Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <idea-version since-build="181.4203" until-build="181.*"/>
+  <extensions defaultExtensionNs="com.intellij"/>
+  <actions>
+    <group id="outer" text="AdobeAEM" description="Sample desc">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="HelpMenu"/>
+      <group id="inner" text="AEM" popup="true">
+        <action class="MyActionClass" id="a3" text="Create Component"/>
+      </group>
+    </group>
+  </actions>
+</idea-plugin>
