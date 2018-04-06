@@ -4,13 +4,12 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.apache.commons.io.FileUtils;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
+import java.nio.file.Files;
 
 public class MyActionClass extends AnAction {
 
@@ -18,6 +17,7 @@ public class MyActionClass extends AnAction {
     private String componentName = "";
     private String componentGroup = "";
     private boolean createClientLibs;
+    private boolean createFullClientLibs;
 
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -39,16 +39,26 @@ public class MyActionClass extends AnAction {
 
         //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
 
+
+
+
         JTextField componentNameInput = new JTextField();
         JTextField componentGroupInput = new JTextField();
+
         JCheckBox createClientLibsChkBx = new JCheckBox();
         createClientLibsChkBx.setSelected(true);
+
+        JCheckBox createFullClientLibsChkBx = new JCheckBox();
+        createFullClientLibsChkBx.setSelected(true);
 
         Object[] message = {
                 "Component Name:", componentNameInput,
                 "Component Group:", componentGroupInput,
-                "Client Libs:",createClientLibsChkBx
+                "Client Libs:",createClientLibsChkBx,
+                "Full Client Libs:",createFullClientLibsChkBx
         };
+
+
 
         //todo set focus to component name input
         int option = JOptionPane.showConfirmDialog(null, message, "Create", JOptionPane.OK_CANCEL_OPTION);
@@ -56,10 +66,16 @@ public class MyActionClass extends AnAction {
             componentName = componentNameInput.getText();
             componentGroup = componentGroupInput.getText();
             createClientLibs = createClientLibsChkBx.isSelected();
+            createFullClientLibs = createFullClientLibsChkBx.isSelected();
         }
 
         this.currentDir = getCurrentWorkingDirectory(e);
 
+
+        generateCQDialog(componentName);
+
+
+        /*---------------------------------------------------
         // create component directory
         createFolder(componentName);
 
@@ -73,7 +89,11 @@ public class MyActionClass extends AnAction {
         // create JS, LESS configs/files
         if(createClientLibs){
             String clientLibsCategory = componentGroup;
-            createClientLibs(componentName, clientLibsCategory);
+            if (createFullClientLibs) {
+                createFullClientLibs(componentName, clientLibsCategory);
+            } else {
+                createClientLibs(componentName, clientLibsCategory);
+            }
         }
 
         // create EditConfig
@@ -81,6 +101,7 @@ public class MyActionClass extends AnAction {
 
         // create HTML
         createHTML(componentName);
+        ----------------------------------------------------*/
 
         refreshWindow(e);
     }
@@ -98,7 +119,6 @@ public class MyActionClass extends AnAction {
                 "          jcr:title=\""+componentName+"\"\n" +
                 "          componentGroup=\""+componentGroup+"\"/>";
         createFile(componentName + "/.content.xml", contentString);
-
     }
 
     private void createEditConfig(String componentName) {
@@ -115,7 +135,7 @@ public class MyActionClass extends AnAction {
         createFile(componentName + "/"+componentName+".html", htmlText);
     }
 
-    private void createClientLibs(String componentName, String clientLibCategory) {
+    private void createFullClientLibs(String componentName, String clientLibCategory) {
         //doesnt make editor LESS OR JS
 
         String clientLibsContentXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
@@ -161,6 +181,59 @@ public class MyActionClass extends AnAction {
 
         String javaEditorScriptText = this.getDefaultJavaScriptContent();
         createFile(componentName + "/clientlibs/editor/js/"+componentName+".js", javaEditorScriptText);
+
+    }
+
+
+    /*
+        Refactoring:
+
+        Make a hashmap of the regex, ie replace "a" with "b"
+            {
+                "componentName":"(String from input box"),
+                "componentGroup":"(String from input box")
+            }
+
+        them make a function, createFileFromTemplate('new File Name','template-file-name', hashmap of things to replace);
+
+        function createClientLibFolderStructure
+
+        function createClientLibFullFolderStructure
+
+        function writeComponentFiles
+
+        handle Exceptions
+     */
+
+
+
+    private void createClientLibs(String componentName, String clientLibCategory) {
+        //doesnt make editor LESS OR JS
+
+        String clientLibsContentXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
+                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
+                "          jcr:primaryType=\"cq:ClientLibraryFolder\"\n" +
+                "          categories=\""+clientLibCategory+"\"/>";
+
+        // create clientLibs File
+        createFolder(componentName + "/clientlibs");
+
+        //site client libs
+        createFile(componentName + "/clientlibs/.content.xml", clientLibsContentXML);
+        createFolder(componentName + "/clientlibs/js");
+        createFolder(componentName + "/clientlibs/less");
+
+        String lessSiteFileText = "#base=less \n\n" + componentName + ".less";
+        createFile(componentName + "/clientlibs/css.txt", lessSiteFileText);
+        String lessFileContent = getDefaultLessContent(componentName);
+        createFile(componentName + "/clientlibs/less/"+componentName+".less", lessFileContent);
+
+        String jsSiteFileText = "#base=js \n\n" + componentName + ".js";
+        createFile(componentName + "/clientlibs/js.txt", jsSiteFileText);
+
+        String javaScriptText = this.getDefaultJavaScriptContent();
+        createFile(componentName + "/clientlibs/js/"+componentName+".js", javaScriptText);
 
     }
 
@@ -240,5 +313,107 @@ public class MyActionClass extends AnAction {
                 "		</items>\n" +
                 "	</content>\n" +
                 "</jcr:root>";
+    }
+
+    private File writeFileFromTemplate(String templateName, String fileName){
+        InputStream targetStream = this.getClass().getResourceAsStream(templateName);
+
+        File populatedFile = new File(fileName);
+        try {
+            FileUtils.copyInputStreamToFile(targetStream, populatedFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return populatedFile;
+    }
+
+    private void generateCQDialog(String componentName){
+        //todo this is hidious - refactor
+        try {
+//            InputStream targetStream = this.getClass().getResourceAsStream("files/cq_dialog-template.txt");
+//
+//            File populatedFile = new File(this.currentDir+"test.txt");
+//            FileUtils.copyInputStreamToFile(targetStream, populatedFile);
+
+            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir+"test.xml");
+
+            try {
+                FileReader fr = new FileReader(newFile);
+                String s;
+                String totalStr = "";
+                try (BufferedReader br = new BufferedReader(fr)) {
+
+                    while ((s = br.readLine()) != null) {
+                        totalStr += s + "\n";
+                    }
+
+                    totalStr = totalStr.replaceAll("componentName", componentName);
+                    FileWriter fw = new FileWriter(newFile);
+                    fw.write(totalStr);
+                    fw.close();
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            //Simple exception handling, replace with what's necessary for your use case!
+            throw new RuntimeException("Generating file failed", e);
+        }
+
+        //cut the dialog to the new directory
+    }
+
+    public void duplicateCQDialogTemplate(){
+        //ClassLoader classLoader = getClass().getClassLoader();
+
+//        URL test = this.getClass().getResource("files/cq_dialog-template.txt");
+//        File testFile = new File(test.toURI());
+
+//        System.out.println("Class:");
+//        System.out.println(this.getClass());
+//        System.out.println("URL: " + test);
+
+
+
+//        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+//        URL itest2 = classloader.getResource("../resources/files/cq_dialog-template.txt");
+//        System.out.println("URL2: " + itest2);
+//
+//        System.out.println("here");
+//        String fileName = "cq_dialog-template.txt";
+//        File file = null;
+//        try{
+//            file = new File(classloader.getResource(fileName).getFile());
+//        }catch (Exception e){
+//            System.out.println("file not found:P " + e.getMessage());
+//        }
+//
+//        System.out.println("here3");
+
+        //File is found
+       // System.out.println("File Found : " + file.exists());
+
+///Users/jackkenlay/personal/adobe-aem-plugin/src/main/resources/files/cq_dialog-template.txt
+        //Read File Content
+        //String content = new String(Files.readAllBytes(file.toPath()));
+        //System.out.println(content);
+
+
+//        File template = new File(classLoader.getResource("/resources/files/cq_dialog-template.txt").getFile());
+//        String tempFilePath = this.currentDir + "/cq_dialog.txt";
+//        File cqdialog = new File(tempFilePath);
+
+        //File cqdialog = new File("cq_dialog.txt");
+//        try {
+//            this.copyFile(template,cqdialog);
+//        } catch (Exception e) {
+//            System.out.println("Error: " + e.getMessage());
+//            e.printStackTrace();
+//        }
+    }
+
+    private void copyFile(File source, File dest) throws IOException {
+        Files.copy(source.toPath(), dest.toPath());
     }
 }

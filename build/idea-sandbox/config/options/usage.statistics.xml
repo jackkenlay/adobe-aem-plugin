@@ -1,18 +1,13 @@
 <application>
   <component name="ActionsCollector">
     <counts>
-      <entry action="$Delete" count="9" />
-      <entry action="$Undo" count="1" />
-      <entry action="EditorBackSpace" count="19" />
-      <entry action="EditorCopy" count="1" />
-      <entry action="EditorCut" count="1" />
-      <entry action="EditorEnter" count="3" />
-      <entry action="EditorPaste" count="1" />
-      <entry action="EditorUp" count="1" />
-      <entry action="a3" count="16" />
+      <entry action="$Delete" count="2" />
+      <entry action="EditorBackSpace" count="1" />
+      <entry action="SaveAll" count="1" />
+      <entry action="a3" count="6" />
     </counts>
   </component>
-  <component name="FeatureUsageStatistics" first-run="1522925263645" have-been-shown="false" show-in-other="true" show-in-compilation="true">
+  <component name="FeatureUsageStatistics" first-run="1523022429044" have-been-shown="false" show-in-other="true" show-in-compilation="true">
     <feature id="editing.completion.smarttype.afternew" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.camelHumps" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="editing.completion.second.smarttype.aslist" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -68,7 +63,7 @@
     <feature id="editing.completion.postfix" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="refactoring.introduceVariable.incompleteStatement" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="dir.diff" count="0" last-shown="0" last-used="0" shown-count="0" />
-    <feature id="editing.select.word" count="17" last-shown="0" last-used="1522934943943" shown-count="0" />
+    <feature id="editing.select.word" count="10" last-shown="0" last-used="1523026509915" shown-count="0" />
     <feature id="editing.add.carets.using.double.ctrl" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="codeassists.quickjavadoc.lookup" count="0" last-shown="0" last-used="0" shown-count="0" />
     <feature id="ui.scheme.quickswitch" count="0" last-shown="0" last-used="0" shown-count="0" />
@@ -101,19 +96,15 @@
   </component>
   <component name="ShortcutsCollector">
     <counts>
-      <entry shortcut="Backspace" count="19" />
-      <entry shortcut="Enter" count="3" />
-      <entry shortcut="Meta+C" count="1" />
-      <entry shortcut="Meta+V" count="1" />
-      <entry shortcut="Meta+X" count="1" />
-      <entry shortcut="Meta+Z" count="1" />
-      <entry shortcut="Up" count="1" />
+      <entry shortcut="Backspace" count="1" />
+      <entry shortcut="Meta+S" count="1" />
     </counts>
   </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="17" />
+      <entry feature="ideaapp.started" count="7" />
       <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
     </counts>
   </component>
   <component name="UsagesStatistic" show-notification="false" />
