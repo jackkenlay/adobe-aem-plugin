@@ -327,6 +327,27 @@ public class MyActionClass extends AnAction {
         return populatedFile;
     }
 
+    private void replaceTextInFile(File file, String word, String replacement){
+        try {
+            FileReader fr = new FileReader(file);
+            String s;
+            String totalStr = "";
+            try (BufferedReader br = new BufferedReader(fr)) {
+
+                while ((s = br.readLine()) != null) {
+                    totalStr += s + "\n";
+                }
+
+                totalStr = totalStr.replaceAll(word, replacement);
+                FileWriter fw = new FileWriter(file);
+                fw.write(totalStr);
+                fw.close();
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void generateCQDialog(String componentName){
         //todo this is hidious - refactor
         try {
@@ -337,24 +358,26 @@ public class MyActionClass extends AnAction {
 
             File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir+"test.xml");
 
-            try {
-                FileReader fr = new FileReader(newFile);
-                String s;
-                String totalStr = "";
-                try (BufferedReader br = new BufferedReader(fr)) {
+            replaceTextInFile(newFile, "componentName",componentName);
 
-                    while ((s = br.readLine()) != null) {
-                        totalStr += s + "\n";
-                    }
-
-                    totalStr = totalStr.replaceAll("componentName", componentName);
-                    FileWriter fw = new FileWriter(newFile);
-                    fw.write(totalStr);
-                    fw.close();
-                }
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+//            try {
+//                FileReader fr = new FileReader(newFile);
+//                String s;
+//                String totalStr = "";
+//                try (BufferedReader br = new BufferedReader(fr)) {
+//
+//                    while ((s = br.readLine()) != null) {
+//                        totalStr += s + "\n";
+//                    }
+//
+//                    totalStr = totalStr.replaceAll("componentName", componentName);
+//                    FileWriter fw = new FileWriter(newFile);
+//                    fw.write(totalStr);
+//                    fw.close();
+//                }
+//            } catch(Exception e) {
+//                e.printStackTrace();
+//            }
 
         } catch (Exception e) {
             //Simple exception handling, replace with what's necessary for your use case!
