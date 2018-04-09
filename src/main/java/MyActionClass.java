@@ -124,13 +124,24 @@ public class MyActionClass extends AnAction {
         refreshWindow(e);
     }
 
-    private void generateFullClientLibs(){
+    private void generateFullClientLibs() {
         this.generateFullClientLibFolders();
         this.generateFullClientLibNodes();
-
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/less");
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/less");
     }
 
-    private void generateFullClientLibNodes(){
+    private void generateLessFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/less-template.txt",directory + "/styles.less");
+            //todo client lib category
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateFullClientLibNodes() {
         try {
             File siteNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/site/_cq_dialog.xml");
             //todo client lib category
@@ -143,7 +154,7 @@ public class MyActionClass extends AnAction {
         }
     }
 
-    private void generateFullClientLibFolders(){
+    private void generateFullClientLibFolders() {
         createFolder(this.componentName + "/clientlibs");
 
         createFolder(this.componentName + "/clientlibs/site");
@@ -155,7 +166,7 @@ public class MyActionClass extends AnAction {
         createFolder(this.componentName + "/clientlibs/editor/less");
     }
 
-    private void generateStandardClientLibs(){
+    private void generateStandardClientLibs() {
         generateClientLibsNode();
     }
 
@@ -183,7 +194,7 @@ public class MyActionClass extends AnAction {
         }
     }
 
-    private void generateEditConfig(){
+    private void generateEditConfig() {
         try {
             File newFile = this.writeFileFromTemplate("files/edit-config-template.txt",this.currentDir + "/" + this.componentName + "/_cq_editConfig.xml");
         } catch (Exception e) {
@@ -201,7 +212,7 @@ public class MyActionClass extends AnAction {
         }
     }
 
-    private void generateHTML(){
+    private void generateHTML() {
         try {
             File newFile = this.writeFileFromTemplate("files/html-template.txt",this.currentDir + "/" + this.componentName + "/" +this.componentName + ".html");
             replaceTextInFile(newFile, "componentName",this.componentName);
@@ -210,116 +221,18 @@ public class MyActionClass extends AnAction {
         }
     }
 
-    private void refreshWindow(AnActionEvent e){
+    private void refreshWindow(AnActionEvent e) {
         Project project = e.getData(PlatformDataKeys.PROJECT);
         project.getBaseDir().refresh(false,true);
     }
 
-    private void createFullClientLibs(String componentName, String clientLibCategory) {
-        //doesnt make editor LESS OR JS
-
-        String clientLibsContentXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:ClientLibraryFolder\"\n" +
-                "          categories=\""+clientLibCategory+"\"/>";
-
-        // create clientLibs File
-        createFolder(componentName + "/clientlibs");
-
-        //site client libs
-        createFolder(componentName + "/clientlibs/site");
-        createFile(componentName + "/clientlibs/site/.content.xml", clientLibsContentXML);
-        createFolder(componentName + "/clientlibs/site/js");
-        createFolder(componentName + "/clientlibs/site/less");
-
-        String lessSiteFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/site/css.txt", lessSiteFileText);
-        String lessFileContent = getDefaultLessContent(componentName);
-        createFile(componentName + "/clientlibs/site/less/"+componentName+".less", lessFileContent);
-
-        String jsSiteFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/site/js.txt", jsSiteFileText);
-
-        String javaScriptText = this.getDefaultJavaScriptContent();
-        createFile(componentName + "/clientlibs/site/js/"+componentName+".js", javaScriptText);
-
-
-        //editor client libs
-        createFolder(componentName + "/clientlibs/editor");
-        createFile(componentName + "/clientlibs/editor/.content.xml", clientLibsContentXML);
-        createFolder(componentName + "/clientlibs/editor/less");
-        createFolder(componentName + "/clientlibs/editor/js");
-
-        String lessFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/editor/css.txt", lessFileText);
-        String lessEditorFileContent = getDefaultLessContent(componentName);
-        createFile(componentName + "/clientlibs/editor/less/"+componentName+".less", lessEditorFileContent);
-
-        String jsFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/editor/js.txt", jsFileText);
-
-        String javaEditorScriptText = this.getDefaultJavaScriptContent();
-        createFile(componentName + "/clientlibs/editor/js/"+componentName+".js", javaEditorScriptText);
-
-    }
-
-
-    /*
-        Refactoring:
-
-        Make a hashmap of the regex, ie replace "a" with "b"
-            {
-                "componentName":"(String from input box"),
-                "componentGroup":"(String from input box")
-            }
-
-        them make a function, createFileFromTemplate('new File Name','template-file-name', hashmap of things to replace);
-
-        function createClientLibFolderStructure
-
-        function createClientLibFullFolderStructure
-
-        function writeComponentFiles
-
-        handle Exceptions
-     */
-
-
-
-    private void createClientLibs(String componentName, String clientLibCategory) {
-        //doesnt make editor LESS OR JS
-
-        String clientLibsContentXML = "";
-
-        // create clientLibs File
-        createFolder(componentName + "/clientlibs");
-
-        //site client libs
-        createFile(componentName + "/clientlibs/.content.xml", clientLibsContentXML);
-        createFolder(componentName + "/clientlibs/js");
-        createFolder(componentName + "/clientlibs/less");
-
-        String lessSiteFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/css.txt", lessSiteFileText);
-        String lessFileContent = getDefaultLessContent(componentName);
-        createFile(componentName + "/clientlibs/less/"+componentName+".less", lessFileContent);
-
-        String jsSiteFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/js.txt", jsSiteFileText);
-
-        String javaScriptText = this.getDefaultJavaScriptContent();
-        createFile(componentName + "/clientlibs/js/"+componentName+".js", javaScriptText);
-
-    }
-
-    private String getDefaultJavaScriptContent(){
+    private String getDefaultJavaScriptContent() {
         return "(function(){\n" +
                 "    console.log('Client libs JS Loaded');\n" +
                 "})();";
     }
 
-    private String getDefaultLessContent(String componentName){
+    private String getDefaultLessContent(String componentName) {
         return "#content-"+componentName+"{\n" +
                 "    \n" +
                 "}";
@@ -353,18 +266,12 @@ public class MyActionClass extends AnAction {
         new File(path).mkdirs();
     }
 
-//    private String getHTMLText(String componentName){
-//        return "<div id=\"component-"+componentName+"\">\n" +
-//               "    ${properties.text || \"Hello\"}\n" +
-//               "</div>";
-//    }
-
     private String getCurrentWorkingDirectory(AnActionEvent e) {
         VirtualFile file = DataKeys.VIRTUAL_FILE.getData(e.getDataContext());
         return file.getPath()+"/";
     }
 
-    private File writeFileFromTemplate(String templateName, String fileName){
+    private File writeFileFromTemplate(String templateName, String fileName) {
         InputStream targetStream = this.getClass().getResourceAsStream(templateName);
 
         File populatedFile = new File(fileName);
