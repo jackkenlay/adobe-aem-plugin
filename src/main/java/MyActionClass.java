@@ -202,8 +202,21 @@ public class MyActionClass extends AnAction {
         createFolder(this.componentName + "/clientlibs/editor/less");
     }
 
+    private void generateStandardClientLibFolders() {
+        createFolder(this.componentName + "/clientlibs/js");
+        createFolder(this.componentName + "/clientlibs/less");
+
+    }
+
     private void generateStandardClientLibs() {
         generateClientLibsNode();
+        generateStandardClientLibFolders();
+
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/less");
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs");
+
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/js");
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs");
     }
 
     private void generateClientLibsNode() {

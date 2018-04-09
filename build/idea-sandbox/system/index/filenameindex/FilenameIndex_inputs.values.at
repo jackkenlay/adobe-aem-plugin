@@ -19,4 +19,6 @@ componentsDefault.xmleditor.codeinsight.xmldebugger.xmldimension
 clientlibs.content.xml	editorsite_cq_dialog.xml	js.txtjslessjs.jsstyles.less_cq_dialog.xml	js.txtjslessjs.jsstyles.lessfaq-page_cq_dialog.xmlusage.statistics.xmlstubIndex.xmlimages.support.xmlrecentProjects.xmlupdates.xmlwindow.manager.xmlfaq-page_cq_dialog.xmlfaq-page.html_cq_editConfig.xml
 clientlibs.content.xml	editorsite_cq_dialog.xml
 css.txt	js.txtjslessjs.jsstyles.less_cq_dialog.xml
-css.txt	js.txtjslessjs.jsstyles.less
+css.txt	js.txtjslessjs.jsstyles.lessstyles.lessjs.jslessjs	js.txt
+css.txt_cq_dialog.xml.content.xml
+clientlibs_cq_editConfig.xmlfaq-page.html_cq_dialog.xmlfaq-page
