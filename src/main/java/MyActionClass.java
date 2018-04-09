@@ -14,6 +14,7 @@ public class MyActionClass extends AnAction {
     private String currentDir = "";
     private String componentName = "";
     private String componentGroup = "";
+    private String componentCategory = "";
     private boolean createClientLibs;
     private boolean createFullClientLibs;
 
@@ -22,31 +23,27 @@ public class MyActionClass extends AnAction {
 
         /*
          * TO DO
-         * Option for 'flat' or editor/site clientlibs
          * Set focus of input text field
-         * Style inputdialog
+         * right click - create client libs
+         * right click - create client libs -> all
+         * right click - create client libs -> js
+         * right click - create client libs -> css
          * Configurable settings
          *  - default component group
          *  - if null, then can save new entry
          *  - default html/less/js templates (hard)
-         * Add in more default nodes in CQDialog so you can go in and delete it after
          * Ensure dialog is smooth experience with keyboard
          * Test export
          * Round off ReadME
-         *
-        //todo templates
-        //client libs category
-        //have checker for less or SASS
-        //auto find components folder for keyboard shortcut
-        //auto focus
-
+         * have checker for less or SASS
+         * auto find components folder for keyboard shortcut
          */
 
         //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
 
-
         JTextField componentNameInput = new JTextField();
         JTextField componentGroupInput = new JTextField();
+        JTextField componentCategoryInput = new JTextField();
 
         JCheckBox createClientLibsChkBx = new JCheckBox();
         createClientLibsChkBx.setSelected(true);
@@ -57,6 +54,7 @@ public class MyActionClass extends AnAction {
         Object[] message = {
                 "Component Name:", componentNameInput,
                 "Component Group:", componentGroupInput,
+                "Component Category:",componentCategoryInput,
                 "Client Libs:",createClientLibsChkBx,
                 "Full Client Libs:",createFullClientLibsChkBx
         };
@@ -66,6 +64,7 @@ public class MyActionClass extends AnAction {
         if (option == JOptionPane.OK_OPTION) {
             this.componentName = componentNameInput.getText();
             this.componentGroup = componentGroupInput.getText();
+            this.componentCategory = componentCategoryInput.getText();
             this.createClientLibs = createClientLibsChkBx.isSelected();
             this.createFullClientLibs = createFullClientLibsChkBx.isSelected();
         }
@@ -96,6 +95,7 @@ public class MyActionClass extends AnAction {
     private void generateFullClientLibs() {
         this.generateFullClientLibFolders();
         this.generateFullClientLibNodes();
+
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/less");
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/less");
 
@@ -139,7 +139,6 @@ public class MyActionClass extends AnAction {
     private void generateLessFromTemplate(String directory) {
         try {
             File newFile = this.writeFileFromTemplate("files/less-template.txt",directory + "/styles.less");
-            //todo client lib category
             replaceTextInFile(newFile, "componentName", this.componentName);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
@@ -149,11 +148,10 @@ public class MyActionClass extends AnAction {
     private void generateFullClientLibNodes() {
         try {
             File siteNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/site/_cq_dialog.xml");
-            //todo client lib category
-            replaceTextInFile(siteNode, "clientLibCategory", this.componentGroup);
+            replaceTextInFile(siteNode, "clientLibCategory", this.componentCategory);
 
             File editorNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/editor/_cq_dialog.xml");
-            replaceTextInFile(editorNode, "clientLibCategory", this.componentGroup);
+            replaceTextInFile(editorNode, "clientLibCategory", this.componentCategory);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
         }
@@ -196,7 +194,7 @@ public class MyActionClass extends AnAction {
         try {
             File newFile = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/_cq_dialog.xml");
             //todo client lib category
-            replaceTextInFile(newFile, "clientLibCategory", this.componentGroup);
+            replaceTextInFile(newFile, "clientLibCategory", this.componentCategory);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
         }
@@ -245,7 +243,7 @@ public class MyActionClass extends AnAction {
 
     private void createFile(String name, String fileContent) {
         String path = currentDir + name;
-
+        //this is awful
         BufferedWriter output = null;
         try {
             File file = new File(path);
@@ -254,12 +252,10 @@ public class MyActionClass extends AnAction {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            //this is awful
             if (output != null) {
                 try {
                     output.close();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
