@@ -74,7 +74,14 @@ public class MyActionClass extends AnAction {
         generateHTML();
         generateContentXML();
         generateEditConfig();
-        generateClientLibsNode();
+
+        if(createClientLibs){
+            if (createFullClientLibs) {
+                generateFullClientLibs();
+            } else {
+                generateStandardClientLibs();
+            }
+        }
 
         //todo templates
         //edit config
@@ -115,6 +122,41 @@ public class MyActionClass extends AnAction {
         ----------------------------------------------------*/
 
         refreshWindow(e);
+    }
+
+    private void generateFullClientLibs(){
+        this.generateFullClientLibFolders();
+        this.generateFullClientLibNodes();
+
+    }
+
+    private void generateFullClientLibNodes(){
+        try {
+            File siteNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/site/_cq_dialog.xml");
+            //todo client lib category
+            replaceTextInFile(siteNode, "clientLibCategory", this.componentGroup);
+
+            File editorNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/editor/_cq_dialog.xml");
+            replaceTextInFile(editorNode, "clientLibCategory", this.componentGroup);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateFullClientLibFolders(){
+        createFolder(this.componentName + "/clientlibs");
+
+        createFolder(this.componentName + "/clientlibs/site");
+        createFolder(this.componentName + "/clientlibs/site/js");
+        createFolder(this.componentName + "/clientlibs/site/less");
+
+        createFolder(this.componentName + "/clientlibs/editor");
+        createFolder(this.componentName + "/clientlibs/editor/js");
+        createFolder(this.componentName + "/clientlibs/editor/less");
+    }
+
+    private void generateStandardClientLibs(){
+        generateClientLibsNode();
     }
 
     private void generateClientLibsNode() {
