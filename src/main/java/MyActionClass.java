@@ -130,13 +130,37 @@ public class MyActionClass extends AnAction {
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/less");
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/less");
 
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor");
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site");
+
         generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/js");
         generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/js");
+
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor");
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site");
+    }
+
+    private void generateJSTextFileFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/js-txt-template.txt",directory + "/js.txt");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
     }
 
     private void generateJSFromTemplate(String directory) {
         try {
             File newFile = this.writeFileFromTemplate("files/js-template.txt",directory + "/js.js");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateLessTextFileFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/css-txt-template.txt",directory + "/css.txt");
             replaceTextInFile(newFile, "componentName", this.componentName);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
