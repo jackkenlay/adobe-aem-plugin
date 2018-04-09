@@ -697,7 +697,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.adobe-aem-plugin [runIde]">
+  <component name="RunManager" selected="Gradle.adobe-aem-plugin [buildPlugin]">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
