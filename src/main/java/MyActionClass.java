@@ -33,6 +33,13 @@ public class MyActionClass extends AnAction {
          * Ensure dialog is smooth experience with keyboard
          * Test export
          * Round off ReadME
+         *
+        //todo templates
+        //client libs category
+        //have checker for less or SASS
+        //auto find components folder for keyboard shortcut
+        //auto focus
+
          */
 
         //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
@@ -82,44 +89,6 @@ public class MyActionClass extends AnAction {
                 generateStandardClientLibs();
             }
         }
-
-        //todo templates
-        //edit config
-        //client lib category
-        //client lib folders
-        //client libs txt files
-        //client libs SASS
-        //client libs LESS
-        //client libs JS
-        //have checker for less or SASS
-
-        /*---------------------------------------------------
-        // create component directory
-        createFolder(componentName);
-
-        // create .content.xml
-        createContentXML(componentName,componentGroup);
-
-        // create CQ Dialog
-        String content = getCQDialogText(componentName);
-        createFile(componentName + "/_cq_dialog.xml", content);
-
-        // create JS, LESS configs/files
-        if(createClientLibs){
-            String clientLibsCategory = componentGroup;
-            if (createFullClientLibs) {
-                createFullClientLibs(componentName, clientLibsCategory);
-            } else {
-                createClientLibs(componentName, clientLibsCategory);
-            }
-        }
-
-        // create EditConfig
-        createEditConfig(componentName);
-
-        // create HTML
-        createHTML(componentName);
-        ----------------------------------------------------*/
 
         refreshWindow(e);
     }
@@ -205,7 +174,6 @@ public class MyActionClass extends AnAction {
     private void generateStandardClientLibFolders() {
         createFolder(this.componentName + "/clientlibs/js");
         createFolder(this.componentName + "/clientlibs/less");
-
     }
 
     private void generateStandardClientLibs() {
@@ -273,18 +241,6 @@ public class MyActionClass extends AnAction {
     private void refreshWindow(AnActionEvent e) {
         Project project = e.getData(PlatformDataKeys.PROJECT);
         project.getBaseDir().refresh(false,true);
-    }
-
-    private String getDefaultJavaScriptContent() {
-        return "(function(){\n" +
-                "    console.log('Client libs JS Loaded');\n" +
-                "})();";
-    }
-
-    private String getDefaultLessContent(String componentName) {
-        return "#content-"+componentName+"{\n" +
-                "    \n" +
-                "}";
     }
 
     private void createFile(String name, String fileContent) {

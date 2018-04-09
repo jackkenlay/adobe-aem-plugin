@@ -504,3 +504,28 @@ Example: args.urlSchemes = ["your-protocol"] will handle following links: your-p
 2018-04-09 15:07:28,628 [  50521]   INFO - penapi.project.DumbServiceImpl - updateFinished 
 2018-04-09 15:07:28,630 [  50523]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project '/Users/jackkenlay/IdeaProjects/untitled14' untitled14 
 2018-04-09 15:07:49,353 [  71246]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2018-04-09 15:08:31,825 [ 113718]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2018-04-09 15:08:31,825 [ 113718]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2018-04-09 15:08:31,825 [ 113718]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2018-04-09 15:08:31,844 [ 113737]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2018-04-09 15:08:31,846 [ 113739]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2018-04-09 15:08:31,849 [ 113742]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 1 auto-detected files
+Elapsed time on auto-detect: 1 ms 
+2018-04-09 15:08:31,861 [ 113754]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2018-04-09 15:08:31,876 [ 113769]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2018-04-09 15:08:31,881 [ 113774]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2018-04-09 15:08:31,883 [ 113776]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     30
+Total time spent: 446ms
+Average duration: 14ms
+Median  duration: 4ms
+Max  duration:    118ms (it was 'write action (class com.intellij.configurationStore.FileBasedStorageKt$doWrite$$inlined$runUndoTransparentWriteAction$1$1)') 
+2018-04-09 15:08:31,883 [ 113776]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     4801
+Total time spent: 826ms
+Average duration: 0ms
+Median  duration: 0ms
+Max  duration:    328ms (it was 'Run context configuration action update (class com.intellij.execution.actions.RunContextAction)') 
+2018-04-09 15:08:31,883 [ 113776]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 7; ProcessIOExecutorService threads: 3 
+2018-04-09 15:08:31,884 [ 113777]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2018-04-09 15:08:31,885 [ 113778]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
