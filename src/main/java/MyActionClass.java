@@ -129,6 +129,18 @@ public class MyActionClass extends AnAction {
         this.generateFullClientLibNodes();
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/less");
         generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/less");
+
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/js");
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/js");
+    }
+
+    private void generateJSFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/js-template.txt",directory + "/js.js");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
     }
 
     private void generateLessFromTemplate(String directory) {

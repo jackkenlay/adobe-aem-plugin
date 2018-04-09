@@ -1,0 +1,3 @@
+(function(){
+    console.log('Client libs for componentName JS Loaded');
+})();
