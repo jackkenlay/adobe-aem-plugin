@@ -73,6 +73,15 @@ public class MyActionClass extends AnAction {
         generateHTML();
         generateContentXML();
 
+        //todo templates
+        //edit config
+        //client lib folders
+        //client libs txt files
+        //client libs SASS
+        //client libs LESS
+        //client libs JS
+        //have checker for less or SASS
+
         /*---------------------------------------------------
         // create component directory
         createFolder(componentName);
