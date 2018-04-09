@@ -65,6 +65,9 @@ public class MyActionClass extends AnAction {
 
         this.currentDir = getCurrentWorkingDirectory(e);
 
+        if(this.componentGroup.equals("")){
+            this.componentGroup = "no-component-group";
+        }
 
         generateCQDialog();
         generateHTML();
@@ -103,9 +106,9 @@ public class MyActionClass extends AnAction {
 
     private void generateContentXML() {
         try {
-            File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + this.componentName + ".xml");
+            File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + ".content.xml");
             replaceTextInFile(newFile, "componentName",this.componentName);
-            replaceTextInFile(newFile, "componentGroup",this.componentGroup);
+            replaceTextInFile(newFile, "inputComponentGroup",this.componentGroup);
         } catch (Exception e) {
             //Simple exception handling, replace with what's necessary for your use case!
             throw new RuntimeException("Generating file failed", e);
