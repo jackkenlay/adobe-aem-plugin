@@ -64,6 +64,7 @@ public class MyActionClass extends AnAction {
         }
 
         this.currentDir = getCurrentWorkingDirectory(e);
+        createFolder(this.componentName);
 
         if(this.componentGroup.equals("")){
             this.componentGroup = "no-component-group";
@@ -73,9 +74,11 @@ public class MyActionClass extends AnAction {
         generateHTML();
         generateContentXML();
         generateEditConfig();
+        generateClientLibsNode();
 
         //todo templates
         //edit config
+        //client lib category
         //client lib folders
         //client libs txt files
         //client libs SASS
@@ -114,18 +117,33 @@ public class MyActionClass extends AnAction {
         refreshWindow(e);
     }
 
+    private void generateClientLibsNode() {
+        createFolder(this.componentName + "/clientlibs");
+        this.generateClientLibsXML();
+    }
+
+    private void generateClientLibsXML() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/_cq_dialog.xml");
+            //todo client lib category
+            replaceTextInFile(newFile, "clientLibCategory", this.componentGroup);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
     private void generateCQDialog() {
         try {
-            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir+"_cq_dialog.xml");
+            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir + "/" + this.componentName + "/_cq_dialog.xml");
             replaceTextInFile(newFile, "componentName",this.componentName);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
         }
     }
-    
+
     private void generateEditConfig(){
         try {
-            File newFile = this.writeFileFromTemplate("files/edit-config-template.txt",this.currentDir + "_cq_editConfig.xml");
+            File newFile = this.writeFileFromTemplate("files/edit-config-template.txt",this.currentDir + "/" + this.componentName + "/_cq_editConfig.xml");
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
         }
@@ -133,7 +151,7 @@ public class MyActionClass extends AnAction {
 
     private void generateContentXML() {
         try {
-            File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + ".content.xml");
+            File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + "/" + this.componentName + "/.content.xml");
             replaceTextInFile(newFile, "componentName",this.componentName);
             replaceTextInFile(newFile, "inputComponentGroup",this.componentGroup);
         } catch (Exception e) {
@@ -143,7 +161,7 @@ public class MyActionClass extends AnAction {
 
     private void generateHTML(){
         try {
-            File newFile = this.writeFileFromTemplate("files/html-template.txt",this.currentDir + this.componentName + ".html");
+            File newFile = this.writeFileFromTemplate("files/html-template.txt",this.currentDir + "/" + this.componentName + "/" +this.componentName + ".html");
             replaceTextInFile(newFile, "componentName",this.componentName);
         } catch (Exception e) {
             throw new RuntimeException("Generating file failed", e);
@@ -154,30 +172,6 @@ public class MyActionClass extends AnAction {
         Project project = e.getData(PlatformDataKeys.PROJECT);
         project.getBaseDir().refresh(false,true);
     }
-
-//    private void createContentXML(String componentName, String componentGroup) {
-//        String contentString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-//                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-//                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-//                "          jcr:primaryType=\"cq:Component\"\n" +
-//                "          jcr:title=\""+componentName+"\"\n" +
-//                "          componentGroup=\""+componentGroup+"\"/>";
-//        createFile(componentName + "/.content.xml", contentString);
-//    }
-
-//    private void createEditConfig(String componentName) {
-//        String editConfigText = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-//                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-//                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-//                "          jcr:primaryType=\"cq:EditConfig\"/>";
-//
-//        createFile(componentName + "/_cq_editConfig.xml", editConfigText);
-//    }
-
-//    private void createHTML(String componentName) {
-//        String htmlText = this.getHTMLText(componentName);
-//        createFile(componentName + "/"+componentName+".html", htmlText);
-//    }
 
     private void createFullClientLibs(String componentName, String clientLibCategory) {
         //doesnt make editor LESS OR JS
@@ -254,11 +248,7 @@ public class MyActionClass extends AnAction {
     private void createClientLibs(String componentName, String clientLibCategory) {
         //doesnt make editor LESS OR JS
 
-        String clientLibsContentXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:ClientLibraryFolder\"\n" +
-                "          categories=\""+clientLibCategory+"\"/>";
+        String clientLibsContentXML = "";
 
         // create clientLibs File
         createFolder(componentName + "/clientlibs");
