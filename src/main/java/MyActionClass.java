@@ -72,6 +72,7 @@ public class MyActionClass extends AnAction {
         generateCQDialog();
         generateHTML();
         generateContentXML();
+        generateEditConfig();
 
         //todo templates
         //edit config
@@ -113,13 +114,29 @@ public class MyActionClass extends AnAction {
         refreshWindow(e);
     }
 
+    private void generateCQDialog() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir+"_cq_dialog.xml");
+            replaceTextInFile(newFile, "componentName",this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+    
+    private void generateEditConfig(){
+        try {
+            File newFile = this.writeFileFromTemplate("files/edit-config-template.txt",this.currentDir + "_cq_editConfig.xml");
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
     private void generateContentXML() {
         try {
             File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + ".content.xml");
             replaceTextInFile(newFile, "componentName",this.componentName);
             replaceTextInFile(newFile, "inputComponentGroup",this.componentGroup);
         } catch (Exception e) {
-            //Simple exception handling, replace with what's necessary for your use case!
             throw new RuntimeException("Generating file failed", e);
         }
     }
@@ -129,7 +146,6 @@ public class MyActionClass extends AnAction {
             File newFile = this.writeFileFromTemplate("files/html-template.txt",this.currentDir + this.componentName + ".html");
             replaceTextInFile(newFile, "componentName",this.componentName);
         } catch (Exception e) {
-            //Simple exception handling, replace with what's necessary for your use case!
             throw new RuntimeException("Generating file failed", e);
         }
     }
@@ -149,14 +165,14 @@ public class MyActionClass extends AnAction {
 //        createFile(componentName + "/.content.xml", contentString);
 //    }
 
-    private void createEditConfig(String componentName) {
-        String editConfigText = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:EditConfig\"/>";
-
-        createFile(componentName + "/_cq_editConfig.xml", editConfigText);
-    }
+//    private void createEditConfig(String componentName) {
+//        String editConfigText = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+//                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
+//                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
+//                "          jcr:primaryType=\"cq:EditConfig\"/>";
+//
+//        createFile(componentName + "/_cq_editConfig.xml", editConfigText);
+//    }
 
 //    private void createHTML(String componentName) {
 //        String htmlText = this.getHTMLText(componentName);
@@ -346,17 +362,6 @@ public class MyActionClass extends AnAction {
             }
         } catch(Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    private void generateCQDialog() {
-        //todo this is hidious - refactor
-        try {
-            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir+"test.xml");
-            replaceTextInFile(newFile, "componentName",this.componentName);
-        } catch (Exception e) {
-            //Simple exception handling, replace with what's necessary for your use case!
-            throw new RuntimeException("Generating file failed", e);
         }
     }
 }
