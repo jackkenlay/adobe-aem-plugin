@@ -4,7 +4,9 @@ echo "Installing Plugin"
 
 #TODO
 #installation dir as var
-#local install thing as var, basically its a copy and delete.i
+
+#local install thing as var, basically its a copy and delete.
+#find the local installation of intelliJ
 
 if [ -d "~/Library/Application\ Support/IdeaIC2018.1/" ]; then
     	echo "Plugin Directory Found"
