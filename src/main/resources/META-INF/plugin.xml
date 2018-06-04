@@ -1,11 +1,12 @@
 <idea-plugin>
     <id>org.jetbrains</id>
-    <name>my_plugin</name>
+    <name>Adobe AEM Plugin</name>
     <version>0.0.1</version>
     <vendor email="dummy" url="dummy">dummy</vendor>
 
     <description><![CDATA[
-      Sample plugin.<br>
+      A plugin to create AEM components.<br>
+      Right click and find AEM -> Create Component. Follow the menu through
     ]]></description>
 
     <change-notes><![CDATA[
@@ -41,7 +42,6 @@
         <!--</action>-->
         <group id="outer" text="AdobeAEM" description="Sample desc">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="before" relative-to-action="HelpMenu"/>
-            <!--<action id="a1" class="com.jackkenlay.MyActionClass" text="eeee"/>-->
             <group id="inner" text="AEM" popup="true">
                 <action class="MyActionClass" id="a3" text="Create Component"/>
             </group>

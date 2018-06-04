@@ -4,181 +4,246 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.apache.commons.io.FileUtils;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class MyActionClass extends AnAction {
 
     private String currentDir = "";
     private String componentName = "";
     private String componentGroup = "";
+    private String componentCategory = "";
     private boolean createClientLibs;
+    private boolean createFullClientLibs;
 
     @Override
     public void actionPerformed(AnActionEvent e) {
 
         /*
          * TO DO
-         * Option for 'flat' or editor/site clientlibs
          * Set focus of input text field
-         * Style inputdialog
+         * right click - create client libs
+         * right click - create client libs -> all
+         * right click - create client libs -> js
+         * right click - create client libs -> css
          * Configurable settings
          *  - default component group
          *  - if null, then can save new entry
          *  - default html/less/js templates (hard)
-         * Add in more default nodes in CQDialog so you can go in and delete it after
          * Ensure dialog is smooth experience with keyboard
          * Test export
          * Round off ReadME
+         * have checker for less or SASS
+         * auto find components folder for keyboard shortcut
          */
 
         //componentName = JOptionPane.showInputDialog(null,"Enter component name:","my-component");
 
         JTextField componentNameInput = new JTextField();
         JTextField componentGroupInput = new JTextField();
+        JTextField componentCategoryInput = new JTextField();
+
         JCheckBox createClientLibsChkBx = new JCheckBox();
         createClientLibsChkBx.setSelected(true);
+
+        JCheckBox createFullClientLibsChkBx = new JCheckBox();
+        createFullClientLibsChkBx.setSelected(true);
 
         Object[] message = {
                 "Component Name:", componentNameInput,
                 "Component Group:", componentGroupInput,
-                "Client Libs:",createClientLibsChkBx
+                "Component Category:",componentCategoryInput,
+                "Client Libs:",createClientLibsChkBx,
+                "Full Client Libs:",createFullClientLibsChkBx
         };
 
         //todo set focus to component name input
         int option = JOptionPane.showConfirmDialog(null, message, "Create", JOptionPane.OK_CANCEL_OPTION);
         if (option == JOptionPane.OK_OPTION) {
-            componentName = componentNameInput.getText();
-            componentGroup = componentGroupInput.getText();
-            createClientLibs = createClientLibsChkBx.isSelected();
+            this.componentName = componentNameInput.getText();
+            this.componentGroup = componentGroupInput.getText();
+            this.componentCategory = componentCategoryInput.getText();
+            this.createClientLibs = createClientLibsChkBx.isSelected();
+            this.createFullClientLibs = createFullClientLibsChkBx.isSelected();
         }
 
         this.currentDir = getCurrentWorkingDirectory(e);
+        createFolder(this.componentName);
 
-        // create component directory
-        createFolder(componentName);
-
-        // create .content.xml
-        createContentXML(componentName,componentGroup);
-
-        // create CQ Dialog
-        String content = getCQDialogText(componentName);
-        createFile(componentName + "/_cq_dialog.xml", content);
-
-        // create JS, LESS configs/files
-        if(createClientLibs){
-            String clientLibsCategory = componentGroup;
-            createClientLibs(componentName, clientLibsCategory);
+        if(this.componentGroup.equals("")){
+            this.componentGroup = "no-component-group";
         }
 
-        // create EditConfig
-        createEditConfig(componentName);
+        generateCQDialog();
+        generateHTML();
+        generateContentXML();
+        generateEditConfig();
 
-        // create HTML
-        createHTML(componentName);
+        if(createClientLibs){
+            if (createFullClientLibs) {
+                generateFullClientLibs();
+            } else {
+                generateStandardClientLibs();
+            }
+        }
 
         refreshWindow(e);
     }
 
-    private void refreshWindow(AnActionEvent e){
+    private void generateFullClientLibs() {
+        this.generateFullClientLibFolders();
+        this.generateFullClientLibNodes();
+
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/less");
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/less");
+
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor");
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site");
+
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site/js");
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor/js");
+
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/editor");
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/site");
+    }
+
+    private void generateJSTextFileFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/js-txt-template.txt",directory + "/js.txt");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateJSFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/js-template.txt",directory + "/js.js");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateLessTextFileFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/css-txt-template.txt",directory + "/css.txt");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateLessFromTemplate(String directory) {
+        try {
+            File newFile = this.writeFileFromTemplate("files/less-template.txt",directory + "/styles.less");
+            replaceTextInFile(newFile, "componentName", this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateFullClientLibNodes() {
+        try {
+            File siteNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/site/_cq_dialog.xml");
+            replaceTextInFile(siteNode, "clientLibCategory", this.componentCategory);
+
+            File editorNode = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/editor/_cq_dialog.xml");
+            replaceTextInFile(editorNode, "clientLibCategory", this.componentCategory);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateFullClientLibFolders() {
+        createFolder(this.componentName + "/clientlibs");
+
+        createFolder(this.componentName + "/clientlibs/site");
+        createFolder(this.componentName + "/clientlibs/site/js");
+        createFolder(this.componentName + "/clientlibs/site/less");
+
+        createFolder(this.componentName + "/clientlibs/editor");
+        createFolder(this.componentName + "/clientlibs/editor/js");
+        createFolder(this.componentName + "/clientlibs/editor/less");
+    }
+
+    private void generateStandardClientLibFolders() {
+        createFolder(this.componentName + "/clientlibs/js");
+        createFolder(this.componentName + "/clientlibs/less");
+    }
+
+    private void generateStandardClientLibs() {
+        generateClientLibsNode();
+        generateStandardClientLibFolders();
+
+        generateLessFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/less");
+        generateLessTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs");
+
+        generateJSFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs/js");
+        generateJSTextFileFromTemplate(this.currentDir+"/"+this.componentName+"/clientlibs");
+    }
+
+    private void generateClientLibsNode() {
+        createFolder(this.componentName + "/clientlibs");
+        this.generateClientLibsXML();
+    }
+
+    private void generateClientLibsXML() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/client-libs-content-xml-template.txt",this.currentDir + "/" + this.componentName + "/clientlibs/_cq_dialog.xml");
+            //todo client lib category
+            replaceTextInFile(newFile, "clientLibCategory", this.componentCategory);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateCQDialog() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/cq_dialog-template.txt",this.currentDir + "/" + this.componentName + "/_cq_dialog.xml");
+            replaceTextInFile(newFile, "componentName",this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateEditConfig() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/edit-config-template.txt",this.currentDir + "/" + this.componentName + "/_cq_editConfig.xml");
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateContentXML() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/content-xml-template.txt",this.currentDir + "/" + this.componentName + "/.content.xml");
+            replaceTextInFile(newFile, "componentName",this.componentName);
+            replaceTextInFile(newFile, "inputComponentGroup",this.componentGroup);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void generateHTML() {
+        try {
+            File newFile = this.writeFileFromTemplate("files/html-template.txt",this.currentDir + "/" + this.componentName + "/" +this.componentName + ".html");
+            replaceTextInFile(newFile, "componentName",this.componentName);
+        } catch (Exception e) {
+            throw new RuntimeException("Generating file failed", e);
+        }
+    }
+
+    private void refreshWindow(AnActionEvent e) {
         Project project = e.getData(PlatformDataKeys.PROJECT);
         project.getBaseDir().refresh(false,true);
     }
 
-    private void createContentXML(String componentName, String componentGroup) {
-        String contentString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:Component\"\n" +
-                "          jcr:title=\""+componentName+"\"\n" +
-                "          componentGroup=\""+componentGroup+"\"/>";
-        createFile(componentName + "/.content.xml", contentString);
-
-    }
-
-    private void createEditConfig(String componentName) {
-        String editConfigText = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:EditConfig\"/>";
-
-        createFile(componentName + "/_cq_editConfig.xml", editConfigText);
-    }
-
-    private void createHTML(String componentName) {
-        String htmlText = this.getHTMLText(componentName);
-        createFile(componentName + "/"+componentName+".html", htmlText);
-    }
-
-    private void createClientLibs(String componentName, String clientLibCategory) {
-        //doesnt make editor LESS OR JS
-
-        String clientLibsContentXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:cq=\"http://www.day.com/jcr/cq/1.0\"\n" +
-                "          xmlns:jcr=\"http://www.jcp.org/jcr/1.0\"\n" +
-                "          jcr:primaryType=\"cq:ClientLibraryFolder\"\n" +
-                "          categories=\""+clientLibCategory+"\"/>";
-
-        // create clientLibs File
-        createFolder(componentName + "/clientlibs");
-
-        //site client libs
-        createFolder(componentName + "/clientlibs/site");
-        createFile(componentName + "/clientlibs/site/.content.xml", clientLibsContentXML);
-        createFolder(componentName + "/clientlibs/site/js");
-        createFolder(componentName + "/clientlibs/site/less");
-
-        String lessSiteFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/site/css.txt", lessSiteFileText);
-        String lessFileContent = getDefaultLessContent(componentName);
-        createFile(componentName + "/clientlibs/site/less/"+componentName+".less", lessFileContent);
-
-        String jsSiteFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/site/js.txt", jsSiteFileText);
-
-        String javaScriptText = this.getDefaultJavaScriptContent();
-        createFile(componentName + "/clientlibs/site/js/"+componentName+".js", javaScriptText);
-
-
-        //editor client libs
-        createFolder(componentName + "/clientlibs/editor");
-        createFile(componentName + "/clientlibs/editor/.content.xml", clientLibsContentXML);
-        createFolder(componentName + "/clientlibs/editor/less");
-        createFolder(componentName + "/clientlibs/editor/js");
-
-        String lessFileText = "#base=less \n\n" + componentName + ".less";
-        createFile(componentName + "/clientlibs/editor/css.txt", lessFileText);
-        String lessEditorFileContent = getDefaultLessContent(componentName);
-        createFile(componentName + "/clientlibs/editor/less/"+componentName+".less", lessEditorFileContent);
-
-        String jsFileText = "#base=js \n\n" + componentName + ".js";
-        createFile(componentName + "/clientlibs/editor/js.txt", jsFileText);
-
-        String javaEditorScriptText = this.getDefaultJavaScriptContent();
-        createFile(componentName + "/clientlibs/editor/js/"+componentName+".js", javaEditorScriptText);
-
-    }
-
-    private String getDefaultJavaScriptContent(){
-        return "(function(){\n" +
-                "    console.log('Client libs JS Loaded');\n" +
-                "})();";
-    }
-
-    private String getDefaultLessContent(String componentName){
-        return "#content-"+componentName+"{\n" +
-                "    \n" +
-                "}";
-    }
-
     private void createFile(String name, String fileContent) {
         String path = currentDir + name;
-
+        //this is awful
         BufferedWriter output = null;
         try {
             File file = new File(path);
@@ -187,12 +252,10 @@ public class MyActionClass extends AnAction {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            //this is awful
             if (output != null) {
                 try {
                     output.close();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -204,41 +267,41 @@ public class MyActionClass extends AnAction {
         new File(path).mkdirs();
     }
 
-    private String getHTMLText(String componentName){
-        return "<div id=\"component-"+componentName+"\">\n" +
-               "    ${properties.text || \"Hello\"}\n" +
-               "</div>";
-    }
-
     private String getCurrentWorkingDirectory(AnActionEvent e) {
         VirtualFile file = DataKeys.VIRTUAL_FILE.getData(e.getDataContext());
-        //VirtualFile folder = file.getParent();
-
-        System.out.println("getCurrentWorkingDirectory returning: "+file.getPath());
         return file.getPath()+"/";
     }
 
-    private String getCQDialogText(String componentName) {
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<jcr:root xmlns:jcr=\"http://www.jcp.org/jcr/1.0\" xmlns:nt=\"http://www.jcp.org/jcr/nt/1.0\"\n" +
-                "	xmlns:sling=\"http://sling.apache.org/jcr/sling/1.0\" jcr:primaryType=\"nt:unstructured\"\n" +
-                "	jcr:title=\""+componentName+"\" sling:resourceType=\"cq/gui/components/authoring/dialog\">\n" +
-                "	<content jcr:primaryType=\"nt:unstructured\"\n" +
-                "		sling:resourceType=\"granite/ui/components/coral/foundation/fixedcolumns\"\n" +
-                "		margin=\"{Boolean}true\">\n" +
-                "		<items jcr:primaryType=\"nt:unstructured\">\n" +
-                "			<column jcr:primaryType=\"nt:unstructured\"\n" +
-                "				sling:resourceType=\"granite/ui/components/coral/foundation/container\">\n" +
-                "				<items jcr:primaryType=\"nt:unstructured\">\n" +
-                "					<text jcr:primaryType=\"nt:unstructured\"\n" +
-                "						sling:resourceType=\"granite/ui/components/coral/foundation/form/textfield\"\n" +
-                "						emptyText=\"My Text\"\n" +
-                "						fieldDescription=\"Add in custom text\"\n" +
-                "						fieldLabel=\"Custom text\" name=\"./text\" />\n" +
-                "				</items>\n" +
-                "			</column>\n" +
-                "		</items>\n" +
-                "	</content>\n" +
-                "</jcr:root>";
+    private File writeFileFromTemplate(String templateName, String fileName) {
+        InputStream targetStream = this.getClass().getResourceAsStream(templateName);
+
+        File populatedFile = new File(fileName);
+        try {
+            FileUtils.copyInputStreamToFile(targetStream, populatedFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return populatedFile;
+    }
+
+    private void replaceTextInFile(File file, String word, String replacement) {
+        try {
+            FileReader fr = new FileReader(file);
+            String s;
+            String totalStr = "";
+            try (BufferedReader br = new BufferedReader(fr)) {
+
+                while ((s = br.readLine()) != null) {
+                    totalStr += s + "\n";
+                }
+
+                totalStr = totalStr.replaceAll(word, replacement);
+                FileWriter fw = new FileWriter(file);
+                fw.write(totalStr);
+                fw.close();
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
